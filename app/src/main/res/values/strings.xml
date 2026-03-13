@@ -43,6 +43,10 @@
     <string name="dashboard_greeting_morning">Good morning</string>
     <string name="dashboard_greeting_afternoon">Good afternoon</string>
     <string name="dashboard_greeting_evening">Good evening</string>
+    <string name="dashboard_empty_title">Nothing here yet</string>
+    <string name="dashboard_empty_description">Create your first workout or combo to get started.</string>
+    <string name="dashboard_create_workout">Workout</string>
+    <string name="dashboard_create_combo">Combo</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>

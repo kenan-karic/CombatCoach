@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
@@ -149,7 +150,7 @@ fun DashboardScreen(state: DashboardState) {
         // ── Empty state ────────────────────────────────────────────────────
         if (state.isEmpty) {
             item {
-                HomeEmptyState(
+                DashboardEmptyState(
                     onCreateWorkout = { state.eventSink(DashboardEvent.CreateWorkout) },
                     onCreateCombo = { state.eventSink(DashboardEvent.CreateCombo) },
                     modifier = Modifier.padding(sp.screenPadding),
