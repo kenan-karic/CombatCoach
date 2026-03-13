@@ -18,6 +18,7 @@ import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
 import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
+import io.aethibo.combatcoach.features.dashboard.components.StatsStrip
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
