@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
+import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
@@ -37,7 +38,7 @@ fun DashboardScreen(state: DashboardState) {
     ) {
         // ── Header ─────────────────────────────────────────────────────────
         item {
-            HomeHeader(
+            DashboardHeader(
                 greeting = state.greeting,
                 today = state.today,
                 onCreateWorkout = { state.eventSink(DashboardEvent.CreateWorkout) },

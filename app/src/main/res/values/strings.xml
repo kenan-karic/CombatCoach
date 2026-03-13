@@ -47,6 +47,9 @@
     <string name="dashboard_empty_description">Create your first workout or combo to get started.</string>
     <string name="dashboard_create_workout">Workout</string>
     <string name="dashboard_create_combo">Combo</string>
+    <string name="dashboard_quick_create_workout">Workout</string>
+    <string name="dashboard_quick_create_combo">Combo</string>
+    <string name="dashboard_quick_create_plan">Plan</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>

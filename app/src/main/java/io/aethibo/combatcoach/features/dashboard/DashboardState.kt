@@ -5,7 +5,7 @@ import kotlin.collections.isNotEmpty
 
 @Stable
 data class DashboardState(
-    val greeting: String = "",
+    val greeting: Int = -1,
     val today: String = "",
     val stats: DashboardStats = DashboardStats(),
     val activePlanProgress: PlanProgress? = null,

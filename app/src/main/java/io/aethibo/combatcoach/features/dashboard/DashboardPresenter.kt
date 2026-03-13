@@ -168,7 +168,7 @@ private fun resolveTodayCombos(
     return allCombos.filter { it.id in day.comboIds }
 }
 
-private fun buildGreeting(): String {
+private fun buildGreeting(): Int {
     val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
     return when {
         hour < 12 -> R.string.dashboard_greeting_morning
