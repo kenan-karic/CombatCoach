@@ -9,12 +9,11 @@ import androidx.compose.runtime.setValue
 import io.aethibo.combatcoach.core.failure.Failure
 import io.aethibo.combatcoach.features.shared.user.domain.usecase.LoadUserPrefsUseCase
 import io.aethibo.combatcoachex.features.shared.user.domain.model.ThemeMode
-import org.koin.compose.koinInject
 
 @Composable
 fun mainPresenter(
     splashStateHolder: SplashStateHolder,
-    loadPrefs: LoadUserPrefsUseCase = koinInject(),
+    loadPrefs: LoadUserPrefsUseCase,
 ): MainState {
 
     var isLoading by remember { mutableStateOf(true) }

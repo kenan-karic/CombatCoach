@@ -11,5 +11,4 @@ data class OnboardingPage(
     @param:StringRes val descriptionRes: Int,
     val illustrationKey: IllustrationKey,
     val accentColor: Color,
-    val discipline: Discipline? = null,
 )

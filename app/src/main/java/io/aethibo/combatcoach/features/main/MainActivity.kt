@@ -16,6 +16,7 @@ import io.aethibo.combatcoach.features.main.navigation.AppNavigation
 import io.aethibo.combatcoach.features.onboarding.navigation.OnboardingRoute
 import io.aethibo.combatcoachex.features.shared.user.domain.model.ThemeMode
 import kotlinx.serialization.Serializable
+import org.koin.compose.koinInject
 
 @Serializable
 object TempRoute : Destination()
@@ -36,7 +37,10 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun CombatCoachApp() {
-        val state = mainPresenter(splashStateHolder = splashStateHolder)
+        val state = mainPresenter(
+            splashStateHolder = splashStateHolder,
+            loadPrefs = koinInject()
+        )
 
         val darkTheme = when (state.themeMode) {
             ThemeMode.DARK -> true

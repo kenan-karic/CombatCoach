@@ -139,7 +139,6 @@ private fun OnboardingScreenPreview() {
                     descriptionRes = R.string.onboarding_workouts_description,
                     illustrationKey = IllustrationKey.Workouts,
                     accentColor = CoralPink,
-                    discipline = Discipline.STRIKING,
                 )
             ),
             eventSink = {

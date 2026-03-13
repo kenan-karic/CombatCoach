@@ -29,7 +29,6 @@ fun onboardingPresenter(
                 savePrefs(prefs.copy(onboardingComplete = true))
             },
             ifLeft = {
-                // Fail-open: handled in US-DEV-01-009
                 savePrefs(UserPrefs(onboardingComplete = true))
             }
         )
@@ -68,7 +67,6 @@ private fun buildOnboardingPages(): List<OnboardingPage> {
             descriptionRes = R.string.onboarding_workouts_description,
             illustrationKey = IllustrationKey.Workouts,
             accentColor = CoralPink,
-            discipline = Discipline.STRIKING,
         ),
         OnboardingPage(
             titleRes = R.string.onboarding_timer_title,
@@ -93,4 +91,3 @@ private fun buildOnboardingPages(): List<OnboardingPage> {
         ),
     )
 }
-

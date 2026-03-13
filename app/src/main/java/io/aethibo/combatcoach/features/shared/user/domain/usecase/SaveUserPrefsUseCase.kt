@@ -22,7 +22,7 @@ suspend fun saveUserPrefs(
     catch({
         userPrefsRepository.setBoolean(PrefKeys.ONBOARDING_COMPLETE, prefs.onboardingComplete)
         userPrefsRepository.setString(PrefKeys.THEME_MODE, prefs.themeMode.name)
-        userPrefsRepository.setString(PrefKeys.DEFAULT_DISCIPLINE, prefs.defaultDiscipline.name)
+//        userPrefsRepository.setString(PrefKeys.DEFAULT_DISCIPLINE, prefs.defaultDiscipline.name)
         userPrefsRepository.setBoolean(PrefKeys.SOUND_ENABLED, prefs.soundEnabled)
         userPrefsRepository.setBoolean(PrefKeys.VIBRATION_ENABLED, prefs.vibrationEnabled)
         userPrefsRepository.setString(PrefKeys.WEIGHT_UNIT, prefs.weightUnit.name)
