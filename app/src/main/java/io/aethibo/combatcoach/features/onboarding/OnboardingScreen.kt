@@ -21,9 +21,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.DevicesPreview
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.onboarding.components.OnboardingPageContent
 import kotlinx.coroutines.launch
 import kotlin.collections.getOrNull
 import kotlin.collections.lastIndex
@@ -101,7 +104,7 @@ fun OnboardingScreen(
             AnimatedVisibility(visible = !isLastPage) {
                 TextButton(onClick = { state.eventSink(OnboardingEvent.Skip) }) {
                     Text(
-                        text = "Skip",
+                        text = stringResource(R.string.skip),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
