@@ -23,16 +23,13 @@ fun onboardingPresenter(
     val scope = rememberCoroutineScope()
     val pages = remember { buildOnboardingPages() }
 
-    // Extracted as a suspend function — no navigation side effects inside
     suspend fun markOnboardingComplete() {
         loadPrefs().fold(
             ifRight = { prefs ->
                 savePrefs(prefs.copy(onboardingComplete = true))
-                // onFinished() NOT called here — called once in the outer launch block
             },
             ifLeft = {
-                // Fail-open: save defaults with onboardingComplete = true
-                // so the user never sees onboarding again even if load fails
+                // Fail-open: handled in US-DEV-01-009
                 savePrefs(UserPrefs(onboardingComplete = true))
             }
         )
@@ -44,7 +41,7 @@ fun onboardingPresenter(
                 OnboardingEvent.Finish,
                 OnboardingEvent.Skip -> scope.launch {
                     markOnboardingComplete()
-                    onFinished() // called exactly once, after save completes
+                    onFinished()
                 }
             }
         }
