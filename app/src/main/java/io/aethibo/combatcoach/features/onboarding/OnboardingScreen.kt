@@ -27,6 +27,7 @@ import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.DevicesPreview
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.onboarding.components.OnboardingPageContent
+import io.aethibo.combatcoach.features.onboarding.components.PageIndicator
 import kotlinx.coroutines.launch
 import kotlin.collections.getOrNull
 import kotlin.collections.lastIndex
