@@ -24,10 +24,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
+import io.aethibo.combatcoach.core.ui.theme.CoralPink
 import io.aethibo.combatcoach.core.ui.theme.DevicesPreview
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.core.ui.theme.Periwinkle
+import io.aethibo.combatcoach.features.onboarding.components.OnboardingButton
 import io.aethibo.combatcoach.features.onboarding.components.OnboardingPageContent
 import io.aethibo.combatcoach.features.onboarding.components.PageIndicator
+import io.aethibo.combatcoach.features.onboarding.model.IllustrationKey
+import io.aethibo.combatcoach.features.onboarding.model.OnboardingPage
 import kotlinx.coroutines.launch
 import kotlin.collections.getOrNull
 import kotlin.collections.lastIndex
@@ -119,11 +124,29 @@ fun OnboardingScreen(
 @Composable
 private fun OnboardingScreenPreview() {
     CombatCoachTheme {
-//        val state = OnboardingState(
-//            pages = listOf<OnboardingPage>(
-//
-//            )
-//        )
-//        OnboardingScreen(state)
+        val state = OnboardingState(
+            pages = listOf(
+                OnboardingPage(
+                    titleRes = R.string.onboarding_welcome_title,
+                    subtitleRes = R.string.onboarding_welcome_subtitle,
+                    descriptionRes = R.string.onboarding_welcome_description,
+                    illustrationKey = IllustrationKey.Welcome,
+                    accentColor = Periwinkle,
+                ),
+                OnboardingPage(
+                    titleRes = R.string.onboarding_workouts_title,
+                    subtitleRes = R.string.onboarding_workouts_subtitle,
+                    descriptionRes = R.string.onboarding_workouts_description,
+                    illustrationKey = IllustrationKey.Workouts,
+                    accentColor = CoralPink,
+                    discipline = Discipline.STRIKING,
+                )
+            ),
+            eventSink = {
+                // no-op
+            }
+        )
+
+        OnboardingScreen(state = state)
     }
 }
