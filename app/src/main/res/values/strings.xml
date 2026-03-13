@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Combat Coach</string>
+
+
+    <!-- Utilities -->
+    <string name="skip">Skip</string>
+
+    <!-- Onboarding - Welcome -->
+    <string name="onboarding_welcome_title">Welcome to\nCombat Coach</string>
+    <string name="onboarding_welcome_subtitle">Your offline training partner</string>
+    <string name="onboarding_welcome_description">
+        Build workouts, drill combos, follow training plans — all stored locally on your device. No account needed, no internet required.
+    </string>
+
+    <!-- Onboarding - Workouts -->
+    <string name="onboarding_workouts_title">Build Your\nWorkouts</string>
+    <string name="onboarding_workouts_subtitle">Strength &amp; combat in one place</string>
+    <string name="onboarding_workouts_description">
+        Create strength workouts with sets and reps, or build martial arts combos with timed rounds. Mix disciplines — striking, grappling, MMA, or general fitness.
+    </string>
+
+    <!-- Onboarding - Timer -->
+    <string name="onboarding_timer_title">Follow the\nTimer</string>
+    <string name="onboarding_timer_subtitle">Eyes on the drill, not the clock</string>
+    <string name="onboarding_timer_description">
+        The timer shows your combo or exercise name in full view. Auto-advance between rounds, or tap Done when you\'re ready. Pause, add time, or skip any round.
+    </string>
+
+    <!-- Onboarding - Progress -->
+    <string name="onboarding_progress_title">Track Your\nProgress</string>
+    <string name="onboarding_progress_subtitle">Every session logged automatically</string>
+    <string name="onboarding_progress_description">
+        After each session your stats are saved. Return to any workout and see your previous performance side-by-side. Follow training plans and track your progress day by day.
+    </string>
+
+    <!-- Onboarding - Achievements -->
+    <string name="onboarding_achievements_title">Earn\nAchievements</string>
+    <string name="onboarding_achievements_subtitle">Gamify your training journey</string>
+    <string name="onboarding_achievements_description">
+        Unlock achievements as you train — first workout, consistency streaks, volume milestones, and more. Every session counts toward your next reward.
+    </string>
 </resources>
