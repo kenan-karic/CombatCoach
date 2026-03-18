@@ -52,7 +52,7 @@ import io.aethibo.combatcoach.shared.plan.domain.model.PlanDay
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
 
 @Composable
-fun WeekSection(
+internal fun WeekSection(
     group: WeekGroup,
     currentDayIdx: Int,
     isActivePlan: Boolean,

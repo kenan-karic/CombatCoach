@@ -32,7 +32,7 @@ import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.utils.TrainingDiscipline
 
 @Composable
-fun WorkoutSessionItemRow(
+internal fun WorkoutSessionItemRow(
     name: String,
     discipline: TrainingDiscipline,
     detail: String,

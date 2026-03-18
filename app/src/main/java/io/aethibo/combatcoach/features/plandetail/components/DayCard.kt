@@ -33,7 +33,7 @@ import io.aethibo.combatcoach.shared.plan.domain.model.PlanDay
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
 
 @Composable
-fun DayCard(
+internal fun DayCard(
     day: PlanDay,
     dayIndex: Int,
     currentDayIdx: Int,

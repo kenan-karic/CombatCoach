@@ -31,7 +31,7 @@ import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.shared.utils.Discipline
 
 @Composable
-fun SessionItemRow(
+internal fun SessionItemRow(
     name: String,
     discipline: Discipline,
     detail: String,
