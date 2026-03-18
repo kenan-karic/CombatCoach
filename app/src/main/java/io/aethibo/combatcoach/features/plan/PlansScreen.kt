@@ -3,7 +3,9 @@ package io.aethibo.combatcoach.features.plan
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -21,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.plan.components.ActivePlanBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,7 +59,16 @@ fun PlansScreen(state: PlansState) {
             contentPadding = PaddingValues(horizontal = sp.screenPadding, vertical = sp.medium),
             verticalArrangement = Arrangement.spacedBy(sp.cardGap),
         ) {
-
+            state.activePlanDetail?.let { active ->
+                item(key = "active-banner") {
+                    ActivePlanBanner(
+                        plan       = active,
+                        activePlan = state.activePlan ?: return@item,
+                        onClick    = { state.eventSink(PlansEvent.OpenPlan(active.id)) },
+                    )
+                    Spacer(Modifier.height(sp.sectionGap))
+                }
+            }
         }
     }
 }

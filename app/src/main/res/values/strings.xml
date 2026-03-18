@@ -64,6 +64,13 @@
     <string name="cd_start_combo">Start %1$s</string>
     <string name="stats_streak_days_format">%1$dd</string>
 
+    <!-- Plan -->
+    <string name="plan_banner_active_label">ACTIVE PLAN</string>
+    <string name="plan_banner_day_label">Day</string>
+    <string name="plan_banner_progress_format">%1$d/%2$d</string>
+    <string name="plan_banner_percent_format">%1$d%% complete</string>
+    <string name="plan_banner_open_cta">Tap to open →</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
