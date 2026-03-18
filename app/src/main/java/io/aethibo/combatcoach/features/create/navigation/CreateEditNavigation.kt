@@ -1,4 +1,4 @@
-package io.aethibo.combatcoach.features.create.navigation
+package io.aethibo.combatcoachex.features.editcreate.presentation.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
