@@ -25,8 +25,6 @@ import io.aethibo.combatcoach.shared.workout.domain.usecase.ObserveWorkoutsUseCa
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
-private const val WEEK_VIEW_THRESHOLD = 14
-
 private fun buildWeekGroups(
     plan: Plan?,
     activePlan: ActivePlan?,

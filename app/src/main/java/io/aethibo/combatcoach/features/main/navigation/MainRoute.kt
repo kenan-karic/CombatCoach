@@ -4,7 +4,7 @@ import io.aethibo.combatcoach.core.ui.navigation.Destination
 import kotlinx.serialization.Serializable
 
 @Serializable
-object Home : Destination()
+object Dashboard : Destination()
 
 @Serializable
 object Plans : Destination()

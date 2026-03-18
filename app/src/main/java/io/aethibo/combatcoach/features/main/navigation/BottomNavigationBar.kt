@@ -43,7 +43,7 @@ private data class NavItem(
 )
 
 private val navItems = listOf(
-    NavItem(Home, Icons.Outlined.Home, "Home"),
+    NavItem(Dashboard, Icons.Outlined.Home, "Home"),
     NavItem(Plans, Icons.Outlined.CalendarMonth, "Plans"),
     NavItem(Progress, Icons.Outlined.BarChart, "Progress"),
     NavItem(Achievements, Icons.Outlined.EmojiEvents, "Achievements"),

@@ -78,7 +78,7 @@ internal fun StatsStrip(
     }
 }
 
-@Preview(showBackground = true, name = "Home stats strip")
+@Preview(showBackground = true, name = "Dashboard stats strip")
 @Composable
 private fun StatsStripPreview() {
     CombatCoachTheme {

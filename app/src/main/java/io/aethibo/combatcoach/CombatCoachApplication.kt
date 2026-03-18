@@ -2,8 +2,10 @@ package io.aethibo.combatcoach
 
 import android.app.Application
 import io.aethibo.combatcoach.core.database.databaseModule
-import io.aethibo.combatcoach.shared.user.data.di.userPrefsModule
 import io.aethibo.combatcoach.shared.combo.data.di.comboModule
+import io.aethibo.combatcoach.shared.log.data.di.workoutLogModule
+import io.aethibo.combatcoach.shared.plan.data.di.planModule
+import io.aethibo.combatcoach.shared.user.data.di.userPrefsModule
 import io.aethibo.combatcoach.shared.workout.data.di.workoutModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,9 +31,11 @@ class CombatCoachApplication : Application(), KoinComponent,
             androidContext(this@CombatCoachApplication)
             modules(
                 databaseModule,
-                _root_ide_package_.io.aethibo.combatcoach.shared.user.data.di.userPrefsModule,
+                userPrefsModule,
                 workoutModule,
                 comboModule,
+                planModule,
+                workoutLogModule
             )
         }
     }

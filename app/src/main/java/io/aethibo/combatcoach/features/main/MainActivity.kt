@@ -10,16 +10,12 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import io.aethibo.combatcoach.core.ui.navigation.Destination
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.features.main.navigation.AppNavigation
+import io.aethibo.combatcoach.features.main.navigation.Dashboard
 import io.aethibo.combatcoach.features.onboarding.navigation.OnboardingRoute
 import io.aethibo.combatcoach.shared.user.domain.model.ThemeMode
-import kotlinx.serialization.Serializable
 import org.koin.compose.koinInject
-
-@Serializable
-object TempRoute : Destination()
 
 class MainActivity : ComponentActivity() {
 
@@ -58,7 +54,7 @@ class MainActivity : ComponentActivity() {
 
     private fun startDestinationFor(state: MainState): Any = when {
         !state.isOnboardingCompleted -> OnboardingRoute
-        else -> TempRoute
+        else -> Dashboard
     }
 
     private fun setupSplashScreen() {

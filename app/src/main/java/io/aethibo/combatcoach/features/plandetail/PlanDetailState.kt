@@ -7,6 +7,8 @@ import io.aethibo.combatcoach.shared.plan.domain.model.Plan
 import io.aethibo.combatcoach.shared.plan.domain.model.PlanDay
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
 
+internal const val WEEK_VIEW_THRESHOLD = 14
+
 data class PlanDetailState(
     val plan: Plan? = null,
     val activePlan: ActivePlan? = null,

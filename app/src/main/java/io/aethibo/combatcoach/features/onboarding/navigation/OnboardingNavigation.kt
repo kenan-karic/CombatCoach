@@ -12,13 +12,13 @@ import org.koin.compose.koinInject
 object OnboardingRoute : Destination()
 
 fun NavGraphBuilder.onboardingScreen(
-    onNavigateToHome: () -> Unit,
+    onNavigateToDashboard: () -> Unit,
 ) {
     composable<OnboardingRoute> {
         val state = onboardingPresenter(
             savePrefs = koinInject(),
             loadPrefs = koinInject(),
-            onFinished = onNavigateToHome,
+            onFinished = onNavigateToDashboard,
         )
         OnboardingScreen(state = state)
     }

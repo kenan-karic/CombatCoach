@@ -19,6 +19,8 @@ import io.aethibo.combatcoach.features.dashboard.navigation.dashboardScreen
 import io.aethibo.combatcoach.features.dashboard.navigation.navigateToDashboard
 import io.aethibo.combatcoach.features.onboarding.navigation.onboardingScreen
 import io.aethibo.combatcoach.features.plan.navigation.plansScreen
+import io.aethibo.combatcoach.features.plandetail.navigation.navigateToPlanDetails
+import io.aethibo.combatcoach.features.plandetail.navigation.planDetailsScreen
 
 @Composable
 fun AppNavigation(startDestination: Any) {
@@ -28,7 +30,7 @@ fun AppNavigation(startDestination: Any) {
 
     val currentMainRoute = remember(currentDestination) {
         when {
-            currentDestination?.hasRoute<Home>() == true -> Home
+            currentDestination?.hasRoute<Dashboard>() == true -> Dashboard
             currentDestination?.hasRoute<Plans>() == true -> Plans
             currentDestination?.hasRoute<Progress>() == true -> Progress
             currentDestination?.hasRoute<Achievements>() == true -> Achievements
@@ -70,7 +72,7 @@ fun AppNavigation(startDestination: Any) {
             popExitTransition = { slideOutHorizontally(tween(300)) { it / 4 } + fadeOut(tween(200)) },
         ) {
             onboardingScreen(
-                onNavigateToHome = navController::navigateToDashboard,
+                onNavigateToDashboard = navController::navigateToDashboard,
             )
 
             dashboardScreen(
@@ -80,9 +82,7 @@ fun AppNavigation(startDestination: Any) {
                 onNavigateToTimer = { type, id ->
 //                    navController::navigateToTimer
                 },
-                onNavigateToPlan = {
-//                    navController::navigateToPlanDetails
-                },
+                onNavigateToPlan = navController::navigateToPlanDetails,
                 onNavigateToWorkout = { workoutId ->
                     // navController.navigateToCreateEdit(ItemType.Workout, workoutId)
                 },
@@ -92,11 +92,19 @@ fun AppNavigation(startDestination: Any) {
             )
 
             plansScreen(
-                onNavigateToPlan = {
-//                    navController::navigateToPlanDetails
-                },
+                onNavigateToPlan = navController::navigateToPlanDetails,
                 onNavigateToCreate = {
 //                    navController.navigateToCreateEdit(ItemType.Plan)
+                }
+            )
+
+            planDetailsScreen(
+                onBack = navController::navigateUp,
+                onNavigateToEdit = { planId ->
+//                    navController.navigateToCreateEdit(ItemType.Plan, planId)
+                },
+                onNavigateToTimer = { type, id ->
+//                    navController.navigateToTimer(type, id.toInt())
                 }
             )
         }

@@ -107,7 +107,7 @@ internal fun DashboardEmptyState(
 
 @Preview(showBackground = true, name = "Dashboard empty state")
 @Composable
-private fun HomeEmptyStatePreview() {
+private fun DashboardEmptyStatePreview() {
     CombatCoachTheme {
         DashboardEmptyState(
             onCreateCombo = {

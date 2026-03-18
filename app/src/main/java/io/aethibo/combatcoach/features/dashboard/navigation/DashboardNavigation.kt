@@ -1,17 +1,16 @@
 package io.aethibo.combatcoach.features.dashboard.navigation
 
-import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import io.aethibo.combatcoach.features.dashboard.DashboardScreen
 import io.aethibo.combatcoach.features.dashboard.dashboardPresenter
-import io.aethibo.combatcoach.features.main.navigation.Home
+import io.aethibo.combatcoach.features.main.navigation.Dashboard
 import io.aethibo.combatcoach.shared.utils.ItemType
 import org.koin.compose.koinInject
 
 fun NavController.navigateToDashboard() {
-    navigate(Home) {
+    navigate(Dashboard) {
         popUpTo(0) { inclusive = true }
     }
 }
@@ -23,7 +22,7 @@ fun NavGraphBuilder.dashboardScreen(
     onNavigateToPlan: (Int) -> Unit,
     onNavigateToTimer: (ItemType, Int) -> Unit,
 ) {
-    composable<Home> {
+    composable<Dashboard> {
         val state = dashboardPresenter(
             onNavigateToCreate = onNavigateToCreate,
             onNavigateToWorkout = onNavigateToWorkout,

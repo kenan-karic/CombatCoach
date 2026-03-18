@@ -26,6 +26,7 @@ import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
 import io.aethibo.combatcoach.features.dashboard.components.StatsStrip
 import io.aethibo.combatcoach.features.dashboard.components.WorkoutCard
 import io.aethibo.combatcoach.shared.combo.domain.model.Combo
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
 import io.aethibo.combatcoach.shared.plan.domain.model.Plan
 import io.aethibo.combatcoach.shared.plan.domain.utils.PlanProgress
@@ -33,7 +34,6 @@ import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.utils.WorkoutDiscipline
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
-import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
@@ -179,7 +179,7 @@ fun DashboardScreen(state: DashboardState) {
 
 @Preview(showBackground = true, name = "Loading")
 @Composable
-private fun HomeLoadingPreview() {
+private fun DashboardLoadingPreview() {
     CombatCoachTheme {
         DashboardScreen(
             state = DashboardState(
@@ -191,7 +191,7 @@ private fun HomeLoadingPreview() {
 
 @Preview(showBackground = true, name = "Empty state")
 @Composable
-private fun HomeEmptyPreview() {
+private fun DashboardEmptyPreview() {
     CombatCoachTheme {
         val previewStats = DashboardStats(
             totalWorkouts = 24,
@@ -213,7 +213,7 @@ private fun HomeEmptyPreview() {
 
 @Preview(showBackground = true, name = "With plan and today's session")
 @Composable
-private fun HomeWithPlanPreview() {
+private fun DashboardWithPlanPreview() {
     CombatCoachTheme {
         val previewStats = DashboardStats(
             totalWorkouts = 24,
@@ -266,7 +266,7 @@ private fun HomeWithPlanPreview() {
 
 @Preview(showBackground = true, name = "Recent only — no plan")
 @Composable
-private fun HomeRecentOnlyPreview() {
+private fun DashboardRecentOnlyPreview() {
     CombatCoachTheme {
         val previewStats = DashboardStats(
             totalWorkouts = 24,
