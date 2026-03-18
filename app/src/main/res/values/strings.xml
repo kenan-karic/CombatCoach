@@ -149,6 +149,16 @@
     <string name="cd_expand_exercise">Expand exercise details</string>
     <string name="cd_collapse_exercise">Collapse exercise details</string>
 
+    <string name="combo_edit_title_create">New Combo</string>
+    <string name="combo_edit_title_edit">Edit Combo</string>
+    <string name="combo_edit_action_drill">Drill</string>
+
+    <string name="combo_edit_section_discipline">Discipline</string>
+    <string name="combo_edit_section_timer_settings">Timer Settings</string>
+    <string name="combo_edit_section_sequence">Strike Sequence (%1$d)</string>
+
+    <string name="combo_edit_action_add_strike">Add Strike</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
