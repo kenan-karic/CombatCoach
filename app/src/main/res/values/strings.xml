@@ -82,6 +82,10 @@
     <string name="plan_detail_stop_plan">Stop following this plan</string>
     <string name="plan_detail_follow_plan">Follow This Plan</string>
     <string name="plan_detail_preview_day_one">Preview Day 1</string>
+    <string name="plan_detail_header_active_badge">Active</string>
+    <string name="plan_detail_header_stat_days">Days</string>
+    <string name="plan_detail_header_stat_weeks">Weeks</string>
+    <string name="plan_detail_header_stat_rest_days">Rest days</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>

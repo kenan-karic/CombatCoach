@@ -13,7 +13,7 @@ interface TrainingDiscipline {
 }
 
 enum class Discipline : TrainingDiscipline {
-    STRIKING, GRAPPLING, MMA, STRENGTH, GENERAL;
+    STRIKING, GRAPPLING, MMA, STRENGTH, GENERAL, MUAY_THAI, BOXING;
 
     override fun label(): String = when (this) {
         STRIKING -> "Striking"
@@ -21,12 +21,14 @@ enum class Discipline : TrainingDiscipline {
         MMA -> "MMA"
         STRENGTH -> "Strength"
         GENERAL -> "General"
+        MUAY_THAI -> "Muay Thai"
+        BOXING -> "Boxing"
     }
 
     override fun accentColor(): Color = when (this) {
-        STRIKING -> StrikingRed
+        STRIKING, BOXING -> StrikingRed
         GRAPPLING -> GrapplingBlue
-        MMA -> MMAViolet
+        MMA, MUAY_THAI -> MMAViolet
         STRENGTH -> StrengthOrange
         GENERAL -> MintGreen
     }

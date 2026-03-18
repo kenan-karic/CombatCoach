@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.plandetail.components.PlanBottomBar
+import io.aethibo.combatcoach.features.plandetail.components.PlanDetailHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -80,7 +81,7 @@ fun PlanDetailScreen(
                 .padding(padding),
             contentPadding = PaddingValues(bottom = sp.xxl),
         ) {
-
+            item { PlanDetailHeader(plan = plan, state = state) }
         }
     }
 }
