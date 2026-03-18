@@ -14,11 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoachex.core.ui.theme.CombatCoachExTheme
-import io.aethibo.combatcoachex.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoachex.features.shared.utils.Discipline
-import io.aethibo.combatcoachex.features.shared.utils.TrainingDiscipline
-import io.aethibo.combatcoachex.features.shared.utils.WorkoutDiscipline
+import io.aethibo.combatcoach.shared.utils.Discipline
+import io.aethibo.combatcoach.shared.utils.TrainingDiscipline
+import io.aethibo.combatcoach.shared.utils.WorkoutDiscipline
 
 // ── Martial-arts discipline selector (Combo screens) ──────────────────────────
 

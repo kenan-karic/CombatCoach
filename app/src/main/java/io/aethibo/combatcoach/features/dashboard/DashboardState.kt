@@ -1,7 +1,10 @@
 package io.aethibo.combatcoach.features.dashboard
 
 import androidx.compose.runtime.Stable
-import kotlin.collections.isNotEmpty
+import io.aethibo.combatcoach.shared.combo.domain.model.Combo
+import io.aethibo.combatcoach.shared.plan.domain.utils.PlanProgress
+import io.aethibo.combatcoach.shared.workout.domain.model.Workout
+import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
 
 @Stable
 data class DashboardState(

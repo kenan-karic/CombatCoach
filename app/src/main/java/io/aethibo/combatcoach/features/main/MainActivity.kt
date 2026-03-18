@@ -14,7 +14,7 @@ import io.aethibo.combatcoach.core.ui.navigation.Destination
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.features.main.navigation.AppNavigation
 import io.aethibo.combatcoach.features.onboarding.navigation.OnboardingRoute
-import io.aethibo.combatcoachex.features.shared.user.domain.model.ThemeMode
+import io.aethibo.combatcoach.shared.user.domain.model.ThemeMode
 import kotlinx.serialization.Serializable
 import org.koin.compose.koinInject
 

@@ -6,27 +6,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.features.dashboard.model.DashboardData
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.ItemType
-import io.aethibo.combatcoachex.features.shared.combo.domain.model.Combo
-import io.aethibo.combatcoachex.features.shared.combo.domain.usease.ObserveCombosUseCase
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
-import io.aethibo.combatcoachex.features.shared.log.domain.usecase.ObserveDashboardStatsUseCase
-import io.aethibo.combatcoachex.features.shared.plan.domain.model.ActivePlan
-import io.aethibo.combatcoachex.features.shared.plan.domain.model.Plan
-import io.aethibo.combatcoachex.features.shared.plan.domain.model.PlanType
-import io.aethibo.combatcoachex.features.shared.plan.domain.usecase.ObserveActivePlanUseCase
-import io.aethibo.combatcoachex.features.shared.plan.domain.usecase.ObservePlansUseCase
-import io.aethibo.combatcoachex.features.shared.plan.domain.utils.PlanProgress
-import io.aethibo.combatcoachex.features.shared.workout.domain.model.Workout
-import io.aethibo.combatcoachex.features.shared.workout.domain.usecase.ObserveWorkoutsUseCase
+import io.aethibo.combatcoach.shared.combo.domain.model.Combo
+import io.aethibo.combatcoach.shared.combo.domain.usecase.ObserveCombosUseCase
+import io.aethibo.combatcoach.shared.log.domain.usecase.ObserveDashboardStatsUseCase
+import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
+import io.aethibo.combatcoach.shared.plan.domain.model.Plan
+import io.aethibo.combatcoach.shared.plan.domain.model.PlanType
+import io.aethibo.combatcoach.shared.plan.domain.usecase.ObserveActivePlanUseCase
+import io.aethibo.combatcoach.shared.plan.domain.usecase.ObservePlansUseCase
+import io.aethibo.combatcoach.shared.plan.domain.utils.PlanProgress
+import io.aethibo.combatcoach.shared.utils.ItemType
+import io.aethibo.combatcoach.shared.workout.domain.model.Workout
+import io.aethibo.combatcoach.shared.workout.domain.usecase.ObserveWorkoutsUseCase
 import kotlinx.coroutines.flow.combine
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
-import kotlin.collections.filter
-import kotlin.collections.find
-import kotlin.collections.take
 
 @Composable
 fun dashboardPresenter(
@@ -42,17 +38,6 @@ fun dashboardPresenter(
     onNavigateToTimer: (ItemType, Int) -> Unit,
 ): DashboardState {
 
-    // ── Combined flow → single collectAsState ──────────────────────────────
-    // WHY not LaunchedEffect + five var assignments?
-    //
-    // LaunchedEffect with five separate `var x by remember { }` assignments
-    // inside the collector causes up to five sequential recompositions per
-    // emission — one per assignment. Each assignment triggers Compose's
-    // snapshot system independently.
-    //
-    // collectAsState on a single combined Flow produces one StateFlow emission
-    // → one recomposition. Atomic, correct, consistent with the pattern used
-    // across the rest of this architecture.
     val data by remember {
         combine(
             observeWorkouts(),
@@ -172,7 +157,7 @@ private fun buildGreeting(): Int {
     val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
     return when {
         hour < 12 -> R.string.dashboard_greeting_morning
-        hour < 17 ->  R.string.dashboard_greeting_afternoon
+        hour < 17 -> R.string.dashboard_greeting_afternoon
         else -> R.string.dashboard_greeting_evening
     }
 }

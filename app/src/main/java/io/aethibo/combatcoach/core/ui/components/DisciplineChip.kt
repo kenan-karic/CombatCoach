@@ -9,9 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
-import io.aethibo.combatcoachex.core.ui.theme.CombatCoachExTheme
-import io.aethibo.combatcoachex.features.shared.utils.TrainingDiscipline
-import io.aethibo.combatcoachex.features.shared.utils.WorkoutDiscipline
+import io.aethibo.combatcoach.shared.utils.TrainingDiscipline
+import io.aethibo.combatcoach.shared.utils.WorkoutDiscipline
 
 @Composable
 fun DisciplineChip(discipline: TrainingDiscipline) {

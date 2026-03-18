@@ -14,8 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import io.aethibo.combatcoach.core.ui.components.SectionHeader
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.dashboard.components.ActivePlanCard
 import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
 import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
 import io.aethibo.combatcoach.features.dashboard.components.StatsStrip
