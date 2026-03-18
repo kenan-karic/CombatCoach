@@ -8,16 +8,57 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import io.aethibo.combatcoach.features.dashboard.navigation.dashboardScreen
+import io.aethibo.combatcoach.features.dashboard.navigation.navigateToDashboard
 import io.aethibo.combatcoach.features.onboarding.navigation.onboardingScreen
 
 @Composable
 fun AppNavigation(startDestination: Any) {
     val navController = rememberNavController()
+    val currentBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = currentBackStackEntry?.destination
 
-    Scaffold { paddingValues ->
+    val currentMainRoute = remember(currentDestination) {
+        when {
+            currentDestination?.hasRoute<Home>() == true -> Home
+            currentDestination?.hasRoute<Plans>() == true -> Plans
+            currentDestination?.hasRoute<Progress>() == true -> Progress
+            currentDestination?.hasRoute<Achievements>() == true -> Achievements
+            currentDestination?.hasRoute<Settings>() == true -> Settings
+            else -> null
+        }
+    }
+
+    val showBottomBar = currentMainRoute != null
+
+    Scaffold(
+        bottomBar = {
+            if (showBottomBar) {
+                BottomNavigationBar(
+                    currentRoute = currentMainRoute,
+                    onNavigate = { route ->
+                        navController.navigate(route) {
+                            // Pop up to the start destination to avoid building large back stack
+                            popUpTo(navController.graph.startDestinationId) {
+                                saveState = true
+                            }
+                            // Avoid multiple copies of the same destination
+                            launchSingleTop = true
+                            // Restore state when re-selecting a previously selected item
+                            restoreState = true
+                        }
+                    }
+                )
+            }
+        }
+    ) { paddingValues ->
         NavHost(
             navController = navController,
             startDestination = startDestination,
@@ -28,8 +69,25 @@ fun AppNavigation(startDestination: Any) {
             popExitTransition = { slideOutHorizontally(tween(300)) { it / 4 } + fadeOut(tween(200)) },
         ) {
             onboardingScreen(
-                onNavigateToHome = {
+                onNavigateToHome = navController::navigateToDashboard,
+            )
+
+            dashboardScreen(
+                onNavigateToCreate = {
+//                    navController::navigateToCreateEdit
                 },
+                onNavigateToTimer = { type, id ->
+//                    navController::navigateToTimer
+                },
+                onNavigateToPlan = {
+//                    navController::navigateToPlanDetails
+                },
+                onNavigateToWorkout = { workoutId ->
+                    // navController.navigateToCreateEdit(ItemType.Workout, workoutId)
+                },
+                onNavigateToCombo = { comboId ->
+                    //navController.navigateToCreateEdit(ItemType.Combo, comboId)
+                }
             )
         }
     }

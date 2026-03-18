@@ -100,11 +100,11 @@ fun dashboardPresenter(
                 is DashboardEvent.StartWorkout -> onNavigateToTimer(ItemType.Workout, event.id)
                 is DashboardEvent.StartCombo -> onNavigateToTimer(ItemType.Combo, event.id)
                 is DashboardEvent.OpenWorkout -> onNavigateToWorkout(event.id)
+                is DashboardEvent.OpenCombo -> onNavigateToCombo(event.id)
                 is DashboardEvent.OpenPlan -> onNavigateToPlan(event.id)
                 DashboardEvent.CreateWorkout -> onNavigateToCreate(ItemType.Workout)
                 DashboardEvent.CreateCombo -> onNavigateToCreate(ItemType.Combo)
                 DashboardEvent.CreatePlan -> onNavigateToCreate(ItemType.Plan)
-                is DashboardEvent.OpenCombo -> onNavigateToCombo(event.id)
             }
         }
     }
