@@ -3,7 +3,9 @@ package io.aethibo.combatcoach.features.plandetail
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -25,6 +27,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.plandetail.components.PlanBottomBar
 import io.aethibo.combatcoach.features.plandetail.components.PlanDetailHeader
+import io.aethibo.combatcoach.features.plandetail.components.PlanProgressCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,6 +85,16 @@ fun PlanDetailScreen(
             contentPadding = PaddingValues(bottom = sp.xxl),
         ) {
             item { PlanDetailHeader(plan = plan, state = state) }
+
+            if (state.isActivePlan && state.activePlan != null) {
+                item {
+                    PlanProgressCard(
+                        state = state,
+                        modifier = Modifier.padding(horizontal = sp.screenPadding),
+                    )
+                    Spacer(Modifier.height(sp.sectionGap))
+                }
+            }
         }
     }
 }
