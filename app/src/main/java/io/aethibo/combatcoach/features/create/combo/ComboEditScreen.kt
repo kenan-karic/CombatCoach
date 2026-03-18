@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.DisciplineSelector
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.create.components.ComboTimerSettings
 import io.aethibo.combatcoach.features.create.components.DeleteConfirmPopup
 import io.aethibo.combatcoach.features.create.components.EditTopBar
 import io.aethibo.combatcoach.features.create.components.NameDescriptionSection
