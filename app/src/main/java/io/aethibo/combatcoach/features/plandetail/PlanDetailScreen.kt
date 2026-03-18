@@ -28,10 +28,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import io.aethibo.combatcoach.core.ui.components.SectionHeader
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.plandetail.components.CollectionView
 import io.aethibo.combatcoach.features.plandetail.components.DayCard
 import io.aethibo.combatcoach.features.plandetail.components.PlanBottomBar
 import io.aethibo.combatcoach.features.plandetail.components.PlanDetailHeader
 import io.aethibo.combatcoach.features.plandetail.components.PlanProgressCard
+import io.aethibo.combatcoach.features.plandetail.components.WeekSection
 import io.aethibo.combatcoach.features.plandetail.model.SessionType
 import io.aethibo.combatcoach.shared.plan.domain.model.PlanType
 
