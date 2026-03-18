@@ -9,13 +9,10 @@ import io.aethibo.combatcoach.shared.utils.ItemType
 import io.aethibo.combatcoach.shared.utils.ItemTypeNavType
 import io.aethibo.combatcoachex.features.editcreate.presentation.combo.ComboEditScreen
 import io.aethibo.combatcoachex.features.editcreate.presentation.combo.comboEditPresenter
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.CreateEditMode
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.ItemType
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.ItemTypeNavType
 import io.aethibo.combatcoachex.features.editcreate.presentation.plan.PlanEditScreen
 import io.aethibo.combatcoachex.features.editcreate.presentation.planEditPresenter
 import io.aethibo.combatcoachex.features.editcreate.presentation.wokrout.WorkoutEditScreen
-import io.aethibo.combatcoachex.features.editcreate.presentation.workoutEditPresenter
+import io.aethibo.combatcoach.features.create.workout.workoutEditPresenter
 import kotlinx.serialization.Serializable
 import org.koin.compose.koinInject
 import kotlin.reflect.typeOf
