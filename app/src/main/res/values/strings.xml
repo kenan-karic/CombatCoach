@@ -70,6 +70,9 @@
     <string name="plan_banner_progress_format">%1$d/%2$d</string>
     <string name="plan_banner_percent_format">%1$d%% complete</string>
     <string name="plan_banner_open_cta">Tap to open →</string>
+    <string name="plans_empty_title">No plans yet</string>
+    <string name="plans_empty_description">Create a training program to track your progress over multiple days and stay consistent.</string>
+    <string name="plans_empty_button">Create a Plan</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
