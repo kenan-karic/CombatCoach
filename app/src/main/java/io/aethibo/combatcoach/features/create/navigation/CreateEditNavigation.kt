@@ -4,6 +4,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import io.aethibo.combatcoach.features.create.combo.ComboEditScreen
+import io.aethibo.combatcoach.features.create.combo.comboEditPresenter
 import io.aethibo.combatcoach.features.create.utils.CreateEditMode
 import io.aethibo.combatcoach.features.create.workout.WorkoutEditScreen
 import io.aethibo.combatcoach.features.create.workout.workoutEditPresenter
@@ -71,16 +73,16 @@ fun NavGraphBuilder.createEditScreen(
             }
 
             ItemType.Combo -> {
-//                val state = comboEditPresenter(
-//                    mode = mode,
-//                    observeComboById = koinInject(),
-//                    saveCombo = koinInject(),
-//                    deleteCombo = koinInject(),
-//                    onSaved = onSaved,
-//                    onDeleted = onDeleted,
-//                    onStartTimer = onStartTimer,
-//                )
-//                ComboEditScreen(state, onBack)
+                val state = comboEditPresenter(
+                    mode = mode,
+                    observeComboById = koinInject(),
+                    saveCombo = koinInject(),
+                    deleteCombo = koinInject(),
+                    onSaved = onSaved,
+                    onDeleted = onDeleted,
+                    onStartTimer = onStartTimer,
+                )
+                ComboEditScreen(state, onBack)
             }
 
             ItemType.Plan -> {

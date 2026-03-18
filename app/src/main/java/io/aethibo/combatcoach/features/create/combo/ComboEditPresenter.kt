@@ -97,9 +97,6 @@ fun comboEditPresenter(
                         isSaving = true
                         errorMessage = null
 
-                        // FIX: id = 0 for new combos — Room auto-generates the PK.
-                        // id = mode.id for edits — Room updates the existing row.
-                        // No UUID anywhere; the DB owns identity.
                         val combo = Combo(
                             id = if (mode is CreateEditMode.Edit) mode.id else 0,
                             name = name.trim(),
@@ -114,13 +111,9 @@ fun comboEditPresenter(
 
                         saveCombo(combo).fold(
                             ifLeft = { failure ->
-                                isSaving = false
-                                errorMessage = failure.toUserMessage()
+                                isSaving = false; errorMessage = failure.toUserMessage()
                             },
-                            ifRight = {
-                                isSaving = false
-                                onSaved()
-                            }
+                            ifRight = { isSaving = false; onSaved() }
                         )
                     }
                 }

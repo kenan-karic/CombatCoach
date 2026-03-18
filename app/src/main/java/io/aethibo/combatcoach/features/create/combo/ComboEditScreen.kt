@@ -30,24 +30,15 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.DisciplineSelector
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.create.components.AddStrikePopup
 import io.aethibo.combatcoach.features.create.components.ComboTimerSettings
 import io.aethibo.combatcoach.features.create.components.DeleteConfirmPopup
 import io.aethibo.combatcoach.features.create.components.EditTopBar
 import io.aethibo.combatcoach.features.create.components.NameDescriptionSection
 import io.aethibo.combatcoach.features.create.components.SaveBottomBar
 import io.aethibo.combatcoach.features.create.components.SectionDivider
+import io.aethibo.combatcoach.features.create.components.StrikeRow
 import io.aethibo.combatcoach.features.create.utils.CreateEditMode
-import io.aethibo.combatcoachex.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.AddStrikeDialog
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.ComboTimerSettings
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.DeleteConfirmDialog
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.DisciplineSelector
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.EditTopBar
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.NameDescriptionSection
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.SaveBottomBar
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.SectionDivider
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.StrikeRow
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.CreateEditMode
 
 @Composable
 fun ComboEditScreen(
@@ -161,9 +152,9 @@ fun ComboEditScreen(
     }
 
     if (showAddStrikeDialog) {
-        AddStrikeDialog(
+        AddStrikePopup(
             onAdd = { state.eventSink(ComboEditEvent.AddStrike(it)); showAddStrikeDialog = false },
-            onDismiss = { showAddStrikeDialog = false },
+            onDismissRequest = { showAddStrikeDialog = false },
         )
     }
 
