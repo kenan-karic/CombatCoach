@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import io.aethibo.combatcoach.features.create.utils.CreateEditMode
+import io.aethibo.combatcoach.features.create.workout.WorkoutEditScreen
 import io.aethibo.combatcoach.shared.utils.ItemType
 import io.aethibo.combatcoach.shared.utils.ItemTypeNavType
 import io.aethibo.combatcoachex.features.editcreate.presentation.combo.ComboEditScreen
@@ -50,7 +51,7 @@ fun NavGraphBuilder.createEditScreen(
     onSaved: () -> Unit,
     onDeleted: () -> Unit,
     onBack: () -> Unit,
-    onStartTimer: ((ItemType, String) -> Unit)?,
+    onStartTimer: ((ItemType, Int) -> Unit)?,
 ) {
     composable<CreateEditRoute>(typeMap = createEditTypeMap) { backStackEntry ->
         val route = backStackEntry.toRoute<CreateEditRoute>()
