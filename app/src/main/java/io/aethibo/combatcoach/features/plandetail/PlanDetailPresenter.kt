@@ -107,7 +107,7 @@ fun planDetailPresenter(
     val eventSink: (PlanDetailEvent) -> Unit = remember {
         { event ->
             when (event) {
-                PlanDetailEvent.SetAsActive -> scope.launch { setActivePlan(planId.toInt()) }
+                PlanDetailEvent.SetAsActive -> scope.launch { setActivePlan(planId) }
                 PlanDetailEvent.DeactivatePlan -> scope.launch { clearActivePlan() }
                 PlanDetailEvent.AdvanceDay -> scope.launch { advanceActivePlanDay() }
 
