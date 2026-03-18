@@ -11,6 +11,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import io.aethibo.combatcoach.features.plandetail.model.PlanDetailData
 import io.aethibo.combatcoach.features.plandetail.model.SessionType
+import io.aethibo.combatcoach.features.plandetail.model.WeekGroup
 import io.aethibo.combatcoach.shared.combo.domain.usecase.ObserveCombosUseCase
 import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
 import io.aethibo.combatcoach.shared.plan.domain.model.Plan

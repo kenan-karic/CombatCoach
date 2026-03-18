@@ -1,19 +1,11 @@
 package io.aethibo.combatcoach.features.plandetail
 
+import io.aethibo.combatcoach.features.plandetail.model.WeekGroup
 import io.aethibo.combatcoach.shared.combo.domain.model.Combo
 import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
 import io.aethibo.combatcoach.shared.plan.domain.model.Plan
 import io.aethibo.combatcoach.shared.plan.domain.model.PlanDay
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
-
-data class WeekGroup(
-    val weekNumber: Int,
-    val label: String,
-    val days: List<PlanDay>,
-    val isExpanded: Boolean = false,
-    val isCurrentWeek: Boolean = false,
-    val completedCount: Int = 0,
-)
 
 data class PlanDetailState(
     val plan: Plan? = null,

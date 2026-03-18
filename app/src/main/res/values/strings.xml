@@ -90,6 +90,10 @@
     <string name="plan_detail_progress_next_label">Up next: %1$s</string>
     <string name="plan_detail_progress_fraction_format">%1$d / %2$d</string>
     <string name="plan_detail_progress_percent_format">%1$d%% complete</string>
+    <string name="plan_detail_week_current_label">Current</string>
+    <string name="plan_detail_week_days_complete_format">%1$d/%2$d days complete</string>
+    <string name="cd_expand_week">Expand week details</string>
+    <string name="cd_collapse_week">Collapse week details</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
