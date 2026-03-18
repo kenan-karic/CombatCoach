@@ -173,6 +173,29 @@
     <string name="strike_popup_label">Strike name</string>
     <string name="strike_popup_quick_add">Quick add:</string>
 
+    <string name="plan_type_program_subtitle">Ordered days</string>
+    <string name="plan_type_routine_subtitle">Shuffle pool</string>
+
+    <string name="plan_day_rest_label">Rest day</string>
+    <string name="plan_day_summary_format">%1$dW · %2$dC</string>
+    <string name="plan_day_field_label">Day label</string>
+    <string name="plan_day_header_workouts">Workouts</string>
+    <string name="plan_day_header_combos">Combos</string>
+    <string name="cd_remove_day">Remove day</string>
+
+    <string name="cd_select_workout">Select %1$s</string>
+    <string name="cd_deselect_workout">Deselect %1$s</string>
+
+    <string name="plan_edit_title_create">New Plan</string>
+    <string name="plan_edit_title_edit">Edit Plan</string>
+
+    <string name="plan_edit_section_discipline">Discipline</string>
+    <string name="plan_edit_section_type">Plan Type</string>
+    <string name="plan_edit_section_days">Days (%1$d)</string>
+    <string name="plan_edit_section_collection">Workouts in Collection</string>
+
+    <string name="plan_edit_action_add_day">Add Day</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
