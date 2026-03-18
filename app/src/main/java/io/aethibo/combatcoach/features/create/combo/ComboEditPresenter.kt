@@ -133,10 +133,7 @@ fun comboEditPresenter(
 
                 ComboEditEvent.StartTimer -> {
                     if (mode is CreateEditMode.Edit) {
-                        onStartTimer?.invoke(
-                            ItemType.Combo,
-                            mode.id
-                        )
+                        onStartTimer?.invoke(ItemType.Combo, mode.id)
                     }
                 }
             }
