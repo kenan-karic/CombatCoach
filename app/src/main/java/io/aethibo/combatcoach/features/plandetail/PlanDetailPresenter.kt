@@ -1,6 +1,7 @@
 package io.aethibo.combatcoach.features.plandetail
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -80,6 +81,15 @@ fun planDetailPresenter(
             PlanDetailData(plan, workouts, combos, active)
         }
     }.collectAsState(initial = PlanDetailData())
+
+    LaunchedEffect(data.plan) {
+        val plan = data.plan ?: return@LaunchedEffect
+        if (plan.totalDays > WEEK_VIEW_THRESHOLD) {
+            val currentDayIdx = (data.activePlan?.currentDay ?: 1) - 1
+            val currentWeek = (currentDayIdx / 7) + 1
+            expandedWeeks = setOf(currentWeek)
+        }
+    }
 
     // Derived maps — recomputed only when their inputs change
     val workoutMap = remember(data.workouts) { data.workouts.associateBy { it.id } }
