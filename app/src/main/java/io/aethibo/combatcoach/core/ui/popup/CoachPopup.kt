@@ -148,9 +148,9 @@ fun GenericPopupPreview() {
             descriptionResId = R.string.generic_popup_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.ok,
+            confirmResId = R.string.action_ok,
             confirmButtonAction = { },
-            cancelResId = R.string.cancel,
+            cancelResId = R.string.action_cancel,
             cancelButtonAction = { }
         ),
         popupType = PopupTypes.Generic,
@@ -167,7 +167,7 @@ fun InfoPopupPreview() {
             descriptionResId = R.string.info_popup_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.got_it, // "Got it"
+            confirmResId = R.string.action_got_it, // "Got it"
             confirmButtonAction = { }
         ),
         popupType = PopupTypes.Info,
@@ -184,7 +184,7 @@ fun SuccessPopupPreview() {
             descriptionResId = R.string.success_popup_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.continue_action,
+            confirmResId = R.string.action_continue,
             confirmButtonAction = { }
         ),
         popupType = PopupTypes.Success,
@@ -201,9 +201,9 @@ fun WarningPopupPreview() {
             descriptionResId = R.string.warning_popup_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.proceed,
+            confirmResId = R.string.action_proceed,
             confirmButtonAction = { },
-            cancelResId = R.string.cancel,
+            cancelResId = R.string.action_cancel,
             cancelButtonAction = { }
         ),
         popupType = PopupTypes.Warning,
@@ -220,9 +220,9 @@ fun ErrorPopupPreview() {
             descriptionResId = R.string.error_popup_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.retry,
+            confirmResId = R.string.action_retry,
             confirmButtonAction = { },
-            cancelResId = R.string.dismiss,
+            cancelResId = R.string.action_dismiss,
             cancelButtonAction = { }
         ),
         popupType = PopupTypes.Error,
@@ -297,7 +297,7 @@ fun SingleButtonPopupPreview() {
             descriptionResId = R.string.single_button_description
         ),
         buttons = defaultPopupButtons(
-            confirmResId = R.string.acknowledge,
+            confirmResId = R.string.action_acknowledge,
             confirmButtonAction = { }
             // No cancel button - will use full width
         ),

@@ -100,6 +100,12 @@
     <string name="session_workout_detail_format">%1$d exercises · ~%2$dm</string>
     <string name="session_combo_detail_format">%1$d rounds · %2$ds</string>
 
+    <!-- Create/Edit -->
+    <string name="cd_saving_progress">Saving in progress</string>
+    <string name="create_label_name">Name</string>
+    <string name="create_label_description">Description (optional)</string>
+    <string name="error_name_required">Name cannot be empty</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
@@ -133,14 +139,14 @@
     <!-- Button Labels -->
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
-    <string name="got_it">Got it</string>
-    <string name="continue_action">Continue</string>
-    <string name="proceed">Proceed</string>
-    <string name="retry">Retry</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="acknowledge">Acknowledge</string>
+    <string name="action_ok">OK</string>
+    <string name="action_got_it">Got it</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_proceed">Proceed</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_acknowledge">Acknowledge</string>
+    <string name="action_save">Save</string>
 
     <!-- Test values -->
     <string name="test_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
