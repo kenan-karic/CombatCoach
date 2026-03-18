@@ -105,6 +105,8 @@
     <string name="create_label_name">Name</string>
     <string name="create_label_description">Description (optional)</string>
     <string name="error_name_required">Name cannot be empty</string>
+    <string name="delete_popup_title">Delete \"%1$s\"?</string>
+    <string name="delete_popup_description">This action cannot be undone. All associated data will be removed.</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
