@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -21,6 +22,8 @@ import io.aethibo.combatcoach.features.dashboard.components.ActivePlanCard
 import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
 import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
 import io.aethibo.combatcoach.features.dashboard.components.StatsStrip
+import io.aethibo.combatcoach.features.dashboard.components.WorkoutCard
+import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
