@@ -1,7 +1,7 @@
-package io.aethibo.combatcoachex.features.shared.log.domain.model
+package io.aethibo.combatcoach.shared.log.domain.model
 
 data class ExerciseLog(
-    val exerciseId: String,
+    val id: Int = 0,
     val exerciseName: String,
     val setsCompleted: Int,
     val repsPerSet: List<Int> = emptyList(),

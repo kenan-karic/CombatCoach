@@ -1,7 +1,7 @@
 package io.aethibo.combatcoach.shared.log.domain.repository
 
 import io.aethibo.combatcoach.shared.log.data.exception.WorkoutLogException
-import io.aethibo.combatcoachex.features.shared.log.domain.model.WorkoutLog
+import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import kotlinx.coroutines.flow.Flow
 
 interface WorkoutLogRepository {

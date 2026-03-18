@@ -1,10 +1,11 @@
 package io.aethibo.combatcoach.shared.log.data.dao.entity
 
+import androidx.room.PrimaryKey
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class ExerciseLogEntity(
-    val exerciseId: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val exerciseName: String,
     val setsCompleted: Int,
     val repsPerSet: List<Int>,        // one entry per set

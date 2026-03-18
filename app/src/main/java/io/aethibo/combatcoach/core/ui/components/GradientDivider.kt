@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import io.aethibo.combatcoachex.core.ui.theme.CombatCoachExTheme
+import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 
 /**
  * Full-width gradient divider.
@@ -36,7 +36,7 @@ fun GradientDivider(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun GradientDividerPreview() {
-    CombatCoachExTheme {
+    CombatCoachTheme {
         GradientDivider()
     }
 }

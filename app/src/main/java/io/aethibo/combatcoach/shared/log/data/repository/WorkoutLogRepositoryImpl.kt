@@ -3,9 +3,9 @@ package io.aethibo.combatcoach.shared.log.data.repository
 import io.aethibo.combatcoach.shared.log.data.dao.WorkoutLogDao
 import io.aethibo.combatcoach.shared.log.data.exception.WorkoutLogException
 import io.aethibo.combatcoach.shared.log.domain.repository.WorkoutLogRepository
-import io.aethibo.combatcoachex.features.shared.log.domain.mapper.toDomain
-import io.aethibo.combatcoachex.features.shared.log.domain.mapper.toEntity
-import io.aethibo.combatcoachex.features.shared.log.domain.model.WorkoutLog
+import io.aethibo.combatcoach.shared.log.domain.mapper.toDomain
+import io.aethibo.combatcoach.shared.log.domain.mapper.toEntity
+import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.SerializationException

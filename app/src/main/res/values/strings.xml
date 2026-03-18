@@ -71,5 +71,5 @@
     <string name="error_unknown">Something went wrong</string>
 
     <!-- Test values -->
-    <string name="test_title">Test title</string>
+    <string name="test_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
 </resources>

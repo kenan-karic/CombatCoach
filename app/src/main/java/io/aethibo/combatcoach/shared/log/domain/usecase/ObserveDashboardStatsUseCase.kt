@@ -1,10 +1,10 @@
 package io.aethibo.combatcoach.shared.log.domain.usecase
 
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoach.shared.log.domain.repository.WorkoutLogRepository
+import io.aethibo.combatcoach.shared.log.domain.utils.computeStreak
 import io.aethibo.combatcoach.shared.utils.startOfMonthEpoch
 import io.aethibo.combatcoach.shared.utils.startOfWeekEpoch
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
-import io.aethibo.combatcoach.shared.log.domain.utils.computeStreak
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

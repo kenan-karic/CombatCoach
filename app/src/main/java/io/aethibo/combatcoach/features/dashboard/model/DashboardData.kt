@@ -4,7 +4,7 @@ import io.aethibo.combatcoach.shared.combo.domain.model.Combo
 import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
 import io.aethibo.combatcoach.shared.plan.domain.model.Plan
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 data class DashboardData(
     val workouts: List<Workout> = emptyList(),

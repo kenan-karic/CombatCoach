@@ -1,6 +1,6 @@
 package io.aethibo.combatcoach.shared.log.domain.utils
 
-import io.aethibo.combatcoachex.features.shared.log.domain.model.WorkoutLog
+import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import java.util.Calendar
 
 fun computeStreak(logs: List<WorkoutLog>): Int {

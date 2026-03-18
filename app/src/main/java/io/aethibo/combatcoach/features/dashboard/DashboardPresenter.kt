@@ -3,7 +3,9 @@ package io.aethibo.combatcoach.features.dashboard
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.features.dashboard.model.DashboardData
 import io.aethibo.combatcoach.shared.combo.domain.model.Combo
@@ -38,6 +40,8 @@ fun dashboardPresenter(
     onNavigateToTimer: (ItemType, Int) -> Unit,
 ): DashboardState {
 
+    var isLoading by remember { mutableStateOf(true) }
+
     val data by remember {
         combine(
             observeWorkouts(),
@@ -46,6 +50,7 @@ fun dashboardPresenter(
             observeActivePlan(),
             observeDashboardStats(),
         ) { workouts, combos, plans, activePlan, stats ->
+            isLoading = false
             DashboardData(workouts, combos, plans, activePlan, stats)
         }
     }.collectAsState(initial = DashboardData())
@@ -118,7 +123,7 @@ fun dashboardPresenter(
         todayCombos = todayCombos,
         recentWorkouts = recentWorkouts,
         recentCombos = recentCombos,
-        isLoading = false,
+        isLoading = isLoading,
         eventSink = eventSink,
     )
 }

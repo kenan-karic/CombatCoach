@@ -1,8 +1,8 @@
-package io.aethibo.combatcoachex.features.shared.log.domain.mapper
+package io.aethibo.combatcoach.shared.log.domain.mapper
 
 import io.aethibo.combatcoach.shared.log.data.dao.entity.ExerciseLogEntity
 import io.aethibo.combatcoach.shared.log.data.dao.entity.WorkoutLogEntity
-import io.aethibo.combatcoachex.features.shared.log.domain.model.WorkoutLog
+import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import kotlinx.serialization.json.Json
 
 private val json = Json { ignoreUnknownKeys = true; coerceInputValues = true }

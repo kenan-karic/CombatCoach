@@ -1,4 +1,4 @@
-package io.aethibo.combatcoachex.features.shared.log.domain.model
+package io.aethibo.combatcoach.shared.log.domain.model
 
 data class DashboardStats(
     val totalWorkouts: Int = 0,

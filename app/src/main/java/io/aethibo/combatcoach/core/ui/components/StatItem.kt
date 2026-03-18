@@ -39,8 +39,8 @@ fun StatItem(
 private fun StatItemPreview() {
     CombatCoachTheme {
         StatItem(
-            R.string.test_title,
-            R.string.test_title,
+            stringResource(R.string.test_title),
+            stringResource(R.string.test_title)
         )
     }
 }

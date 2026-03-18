@@ -4,10 +4,11 @@ import androidx.compose.runtime.Stable
 import io.aethibo.combatcoach.shared.combo.domain.model.Combo
 import io.aethibo.combatcoach.shared.plan.domain.utils.PlanProgress
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 @Stable
 data class DashboardState(
+    val isLoading: Boolean = true,
     val greeting: Int = -1,
     val today: String = "",
     val stats: DashboardStats = DashboardStats(),
@@ -16,7 +17,6 @@ data class DashboardState(
     val todayCombos: List<Combo> = emptyList(),
     val recentWorkouts: List<Workout> = emptyList(),
     val recentCombos: List<Combo> = emptyList(),
-    val isLoading: Boolean = true,
     val eventSink: (DashboardEvent) -> Unit = {},
 ) {
     val hasTodayContent: Boolean

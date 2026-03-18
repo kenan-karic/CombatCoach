@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.StatItem
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 @Composable
 internal fun StatsStrip(

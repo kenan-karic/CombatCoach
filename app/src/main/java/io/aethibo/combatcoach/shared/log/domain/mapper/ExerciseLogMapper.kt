@@ -1,10 +1,10 @@
-package io.aethibo.combatcoachex.features.shared.log.domain.mapper
+package io.aethibo.combatcoach.shared.log.domain.mapper
 
 import io.aethibo.combatcoach.shared.log.data.dao.entity.ExerciseLogEntity
-import io.aethibo.combatcoachex.features.shared.log.domain.model.ExerciseLog
+import io.aethibo.combatcoach.shared.log.domain.model.ExerciseLog
 
 fun ExerciseLogEntity.toDomain(): ExerciseLog = ExerciseLog(
-    exerciseId = exerciseId,
+    id = id,
     exerciseName = exerciseName,
     setsCompleted = setsCompleted,
     repsPerSet = repsPerSet,
@@ -14,7 +14,7 @@ fun ExerciseLogEntity.toDomain(): ExerciseLog = ExerciseLog(
 )
 
 fun ExerciseLog.toEntity(): ExerciseLogEntity = ExerciseLogEntity(
-    exerciseId = exerciseId,
+    id = id,
     exerciseName = exerciseName,
     setsCompleted = setsCompleted,
     repsPerSet = repsPerSet,

@@ -1,7 +1,7 @@
-package io.aethibo.combatcoachex.features.shared.log.domain.model
+package io.aethibo.combatcoach.shared.log.domain.model
 
 data class WorkoutLog(
-    val id: Int = 0,                   // 0 → Room assigns next auto-generated ID on insert
+    val id: Int = 0,
     val workoutId: Int? = null,
     val comboId: Int? = null,
     val planId: Int? = null,

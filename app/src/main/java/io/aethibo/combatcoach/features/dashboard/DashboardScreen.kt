@@ -15,15 +15,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.SectionHeader
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.dashboard.components.ActivePlanCard
+import io.aethibo.combatcoach.features.dashboard.components.ComboCard
 import io.aethibo.combatcoach.features.dashboard.components.DashboardEmptyState
 import io.aethibo.combatcoach.features.dashboard.components.DashboardHeader
 import io.aethibo.combatcoach.features.dashboard.components.StatsStrip
 import io.aethibo.combatcoach.features.dashboard.components.WorkoutCard
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
+import io.aethibo.combatcoach.shared.combo.domain.model.Combo
+import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
+import io.aethibo.combatcoach.shared.plan.domain.model.Plan
+import io.aethibo.combatcoach.shared.plan.domain.utils.PlanProgress
+import io.aethibo.combatcoach.shared.utils.Discipline
+import io.aethibo.combatcoach.shared.utils.WorkoutDiscipline
+import io.aethibo.combatcoach.shared.workout.domain.model.Workout
+import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
+import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 @Composable
 fun DashboardScreen(state: DashboardState) {
@@ -193,7 +203,7 @@ private fun HomeEmptyPreview() {
         DashboardScreen(
             state = DashboardState(
                 isLoading = false,
-                greeting = "Good morning",
+                greeting = R.string.dashboard_greeting_morning,
                 today = "Wednesday, February 25",
                 stats = previewStats,
             )
@@ -243,7 +253,7 @@ private fun HomeWithPlanPreview() {
         DashboardScreen(
             state = DashboardState(
                 isLoading = false,
-                greeting = "Good afternoon",
+                greeting = R.string.dashboard_greeting_afternoon,
                 today = "Wednesday, February 25",
                 stats = previewStats,
                 activePlanProgress = previewPlanProgress,
@@ -284,7 +294,7 @@ private fun HomeRecentOnlyPreview() {
         DashboardScreen(
             state = DashboardState(
                 isLoading = false,
-                greeting = "Good evening",
+                greeting = R.string.dashboard_greeting_evening,
                 today = "Wednesday, February 25",
                 stats = previewStats,
                 recentWorkouts = listOf(
