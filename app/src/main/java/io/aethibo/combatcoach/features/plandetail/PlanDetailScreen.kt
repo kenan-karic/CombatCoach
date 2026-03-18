@@ -33,6 +33,7 @@ import io.aethibo.combatcoach.features.plandetail.components.DayCard
 import io.aethibo.combatcoach.features.plandetail.components.PlanBottomBar
 import io.aethibo.combatcoach.features.plandetail.components.PlanDetailHeader
 import io.aethibo.combatcoach.features.plandetail.components.PlanProgressCard
+import io.aethibo.combatcoach.features.plandetail.components.StartSessionSheet
 import io.aethibo.combatcoach.features.plandetail.components.WeekSection
 import io.aethibo.combatcoach.features.plandetail.model.SessionType
 import io.aethibo.combatcoach.shared.plan.domain.model.PlanType
@@ -181,6 +182,19 @@ fun PlanDetailScreen(
                     }
                 }
             }
+        }
+    }
+
+    if (state.showStartSheet) {
+        val day = state.plan.days.getOrNull(state.sheetDayIndex)
+        if (day != null) {
+            StartSessionSheet(
+                day = day,
+                workouts = state.workouts,
+                combos = state.combos,
+                onStart = { session -> state.eventSink(PlanDetailEvent.StartSession(session)) },
+                onDismiss = { state.eventSink(PlanDetailEvent.DismissStartSheet) },
+            )
         }
     }
 }

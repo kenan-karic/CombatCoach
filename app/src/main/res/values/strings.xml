@@ -94,6 +94,11 @@
     <string name="plan_detail_week_days_complete_format">%1$d/%2$d days complete</string>
     <string name="cd_expand_week">Expand week details</string>
     <string name="cd_collapse_week">Collapse week details</string>
+    <string name="start_session_title">Choose a session to start:</string>
+    <string name="start_session_empty">No sessions assigned to this day.</string>
+    <string name="start_session_action">Start</string>
+    <string name="session_workout_detail_format">%1$d exercises · ~%2$dm</string>
+    <string name="session_combo_detail_format">%1$d rounds · %2$ds</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
@@ -101,6 +106,46 @@
     <string name="error_prefs_corrupted">A preference was corrupted and reset (%s)</string>
     <string name="error_unknown">Something went wrong</string>
 
+    <!-- Generic Popup -->
+    <string name="generic_popup_title">Information</string>
+    <string name="generic_popup_description">This is a generic popup message.</string>
+
+    <!-- Info Popup -->
+    <string name="info_popup_title">Additional Information</string>
+    <string name="info_popup_description">Here\'s some helpful information you should know.</string>
+
+    <!-- Success Popup -->
+    <string name="success_popup_title">Success!</string>
+    <string name="success_popup_description">Your action was completed successfully.</string>
+
+    <!-- Warning Popup -->
+    <string name="warning_popup_title">Warning</string>
+    <string name="warning_popup_description">Please review this action before proceeding.</string>
+
+    <!-- Error Popup -->
+    <string name="error_popup_title">Error</string>
+    <string name="error_popup_description">Something went wrong. Please try again.</string>
+
+    <!-- Single Button Popup -->
+    <string name="single_button_title">Notification</string>
+    <string name="single_button_description">This is a simple notification popup.</string>
+
+    <!-- Button Labels -->
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="got_it">Got it</string>
+    <string name="continue_action">Continue</string>
+    <string name="proceed">Proceed</string>
+    <string name="retry">Retry</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="acknowledge">Acknowledge</string>
+
     <!-- Test values -->
     <string name="test_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+
+    <!-- Accessibility -->
+    <string name="close_button_accessibility">Close. Button.</string>
+
 </resources>
