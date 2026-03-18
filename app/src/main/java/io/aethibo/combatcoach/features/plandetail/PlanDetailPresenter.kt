@@ -60,7 +60,7 @@ fun planDetailPresenter(
     setActivePlan: SetActivePlanUseCase,
     clearActivePlan: ClearActivePlanUseCase,
     advanceActivePlanDay: AdvanceActivePlanDayUseCase,
-    onNavigateToTimer: (ItemType, String) -> Unit,
+    onNavigateToTimer: (ItemType, Int) -> Unit,
     onNavigateToEdit: (Int) -> Unit,
 ): PlanDetailState {
 
@@ -123,12 +123,12 @@ fun planDetailPresenter(
                     when (val session = event.session) {
                         is SessionType.Workout -> onNavigateToTimer(
                             ItemType.Workout,
-                            session.id.toString()
+                            session.id
                         )
 
                         is SessionType.Combo -> onNavigateToTimer(
                             ItemType.Combo,
-                            session.id.toString()
+                            session.id
                         )
                     }
                 }
