@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Edit
@@ -24,10 +26,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
+import io.aethibo.combatcoach.core.ui.components.SectionHeader
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.plandetail.components.PlanBottomBar
 import io.aethibo.combatcoach.features.plandetail.components.PlanDetailHeader
 import io.aethibo.combatcoach.features.plandetail.components.PlanProgressCard
+import io.aethibo.combatcoach.features.plandetail.model.SessionType
+import io.aethibo.combatcoach.shared.plan.domain.model.PlanType
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +52,7 @@ fun PlanDetailScreen(
         return
     }
 
-    val plan = state.plan   // smart-cast after null check
+    val plan = state.plan
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -93,6 +98,84 @@ fun PlanDetailScreen(
                         modifier = Modifier.padding(horizontal = sp.screenPadding),
                     )
                     Spacer(Modifier.height(sp.sectionGap))
+                }
+            }
+
+            when {
+                plan.planType == PlanType.COLLECTION -> {
+                    item {
+                        SectionHeader(
+                            title = "Workouts in Collection (${plan.workoutIds.size})",
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                        Spacer(Modifier.height(sp.small))
+                    }
+                    item {
+                        CollectionView(
+                            workoutIds = plan.workoutIds,
+                            workouts = state.workouts,
+                            currentIdx = state.currentDayIndex,
+                            isActive = state.isActivePlan,
+                            onStart = { id ->
+                                state.eventSink(PlanDetailEvent.StartSession(SessionType.Workout(id)))
+                            },
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                    }
+                }
+
+                state.useWeekView -> {
+                    item {
+                        SectionHeader(
+                            title = "${plan.days.size} days · ${state.weekGroups.size} weeks",
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                        Spacer(Modifier.height(sp.small))
+                    }
+                    items(items = state.weekGroups, key = { "week-${it.weekNumber}" }) { group ->
+                        WeekSection(
+                            group = group,
+                            currentDayIdx = state.currentDayIndex,
+                            isActivePlan = state.isActivePlan,
+                            workouts = state.workouts,
+                            combos = state.combos,
+                            onToggle = { state.eventSink(PlanDetailEvent.ToggleWeek(group.weekNumber)) },
+                            onOpenSession = { dayIdx ->
+                                state.eventSink(
+                                    PlanDetailEvent.OpenStartSheet(
+                                        dayIdx
+                                    )
+                                )
+                            },
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                        Spacer(Modifier.height(sp.cardGap))
+                    }
+                }
+
+                else -> {
+                    item {
+                        SectionHeader(
+                            title = "${plan.days.size} days",
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                        Spacer(Modifier.height(sp.small))
+                    }
+                    itemsIndexed(
+                        items = plan.days,
+                        key = { _, d -> "day-${d.dayNumber}" }) { index, day ->
+                        DayCard(
+                            day = day,
+                            dayIndex = index,
+                            currentDayIdx = state.currentDayIndex,
+                            isActivePlan = state.isActivePlan,
+                            workouts = state.workouts,
+                            combos = state.combos,
+                            onOpenSession = { state.eventSink(PlanDetailEvent.OpenStartSheet(index)) },
+                            modifier = Modifier.padding(horizontal = sp.screenPadding),
+                        )
+                        Spacer(Modifier.height(sp.cardGap))
+                    }
                 }
             }
         }
