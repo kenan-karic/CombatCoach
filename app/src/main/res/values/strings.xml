@@ -54,6 +54,15 @@
     <string name="dashboard_stats_this_week">This week</string>
     <string name="dashboard_stats_streak">Streak</string>
     <string name="dashboard_stats_minutes">Minutes</string>
+    <string name="plan_progress_fraction_format">%1$d/%2$d</string>
+    <string name="plan_percent_complete_format">%1$d%% complete</string>
+    <string name="workout_exercise_count">%1$d exercises</string>
+    <string name="workout_duration_minutes_format"> · %1$dm</string>
+    <string name="cd_start_workout">Start %1$s</string>
+    <string name="combo_no_strikes">No strikes defined</string>
+    <string name="combo_stats_format">%1$dR · %2$ds</string>
+    <string name="cd_start_combo">Start %1$s</string>
+    <string name="stats_streak_days_format">%1$dd</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>

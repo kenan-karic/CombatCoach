@@ -25,9 +25,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.CircleBadge
 import io.aethibo.combatcoach.core.ui.components.DisciplineChip
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
@@ -45,6 +47,10 @@ fun WorkoutCard(
     modifier: Modifier = Modifier,
 ) {
     val sp = LocalSpacing.current
+    val exerciseText = stringResource(R.string.workout_exercise_count, workout.exerciseCount)
+    val durationText = if (workout.estimatedDurationMinutes > 0) {
+        stringResource(R.string.workout_duration_minutes_format, workout.estimatedDurationMinutes)
+    } else ""
 
     Card(
         onClick = onOpen,
@@ -71,7 +77,7 @@ fun WorkoutCard(
             ) {
                 Icon(
                     imageVector = workout.type.icon(),
-                    contentDescription = null,
+                    contentDescription = stringResource(R.string.cd_start_workout, workout.name),
                     tint = workout.workoutDiscipline.accentColor(),
                     modifier = Modifier.size(24.dp),
                 )
@@ -91,12 +97,7 @@ fun WorkoutCard(
                     DisciplineChip(discipline = workout.workoutDiscipline)
                     Spacer(Modifier.width(sp.small))
                     Text(
-                        text = buildString {
-                            append("${workout.exerciseCount} exercises")
-                            if (workout.estimatedDurationMinutes > 0) {
-                                append(" · ${workout.estimatedDurationMinutes}m")
-                            }
-                        },
+                        text = exerciseText + durationText,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,

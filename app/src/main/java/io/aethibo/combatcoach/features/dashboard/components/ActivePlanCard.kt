@@ -31,9 +31,11 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.shared.plan.domain.model.ActivePlan
@@ -61,7 +63,11 @@ internal fun ActivePlanCard(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(sp.cardPadding)) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(sp.cardPadding)
+        ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -82,20 +88,30 @@ internal fun ActivePlanCard(
                 }
                 CircularPlanProgress(
                     fraction = progress.progressFraction,
-                    label = "${progress.completedDays}/${progress.totalDays}",
+                    label = stringResource(
+                        R.string.plan_progress_fraction_format,
+                        progress.completedDays,
+                        progress.totalDays
+                    ),
                 )
             }
             Spacer(Modifier.height(sp.medium))
             LinearProgressIndicator(
                 progress = { progress.progressFraction },
-                modifier = Modifier.fillMaxWidth().height(6.dp).clip(RoundedCornerShape(3.dp)),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(6.dp)
+                    .clip(RoundedCornerShape(3.dp)),
                 color = MaterialTheme.colorScheme.primary,
                 trackColor = MaterialTheme.colorScheme.primaryContainer,
                 strokeCap = StrokeCap.Round,
             )
             Spacer(Modifier.height(sp.xs))
             Text(
-                text = "${(progress.progressFraction * 100).toInt()}% complete",
+                text = stringResource(
+                    R.string.plan_percent_complete_format,
+                    (progress.progressFraction * 100).toInt()
+                ),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

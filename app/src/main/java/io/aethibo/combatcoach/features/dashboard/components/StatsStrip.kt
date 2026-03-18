@@ -1,13 +1,10 @@
 package io.aethibo.combatcoach.features.dashboard.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -22,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.StatItem
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
+import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
 
 @Composable
 internal fun StatsStrip(
@@ -65,7 +63,7 @@ internal fun StatsStrip(
 
             StatItem(
                 label = stringResource(R.string.dashboard_stats_streak),
-                value = "${stats.currentStreak}d",
+                value = stringResource(R.string.stats_streak_days_format, stats.currentStreak),
                 valueColor = MaterialTheme.colorScheme.tertiary
             )
 

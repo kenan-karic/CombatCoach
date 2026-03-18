@@ -16,18 +16,18 @@ import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
  */
 @Composable
 fun StatItem(
-    labelResId: Int,
-    valueResId: Int,
+    label: String,
+    value: String,
     valueColor: Color = MaterialTheme.colorScheme.primary,
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
-            text = stringResource(valueResId),
+            text = value,
             style = MaterialTheme.typography.headlineSmall,
             color = valueColor,
         )
         Text(
-            text = stringResource(labelResId),
+            text = label,
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
