@@ -74,6 +74,15 @@
     <string name="plans_empty_description">Create a training program to track your progress over multiple days and stay consistent.</string>
     <string name="plans_empty_button">Create a Plan</string>
 
+    <!-- Plan detail -->
+    <string name="plan_detail_rest_day_label">Rest Day — No session needed</string>
+    <string name="plan_detail_start_session">Start Today\'s Session</string>
+    <string name="plan_detail_advance_next_day">Advance to Next Day</string>
+    <string name="plan_detail_mark_done_advance">Mark Day Done &amp; Advance</string>
+    <string name="plan_detail_stop_plan">Stop following this plan</string>
+    <string name="plan_detail_follow_plan">Follow This Plan</string>
+    <string name="plan_detail_preview_day_one">Preview Day 1</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
