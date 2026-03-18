@@ -6,14 +6,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import io.aethibo.combatcoach.features.create.utils.CreateEditMode
 import io.aethibo.combatcoach.features.create.workout.WorkoutEditScreen
+import io.aethibo.combatcoach.features.create.workout.workoutEditPresenter
 import io.aethibo.combatcoach.shared.utils.ItemType
 import io.aethibo.combatcoach.shared.utils.ItemTypeNavType
-import io.aethibo.combatcoachex.features.editcreate.presentation.combo.ComboEditScreen
-import io.aethibo.combatcoachex.features.editcreate.presentation.combo.comboEditPresenter
-import io.aethibo.combatcoachex.features.editcreate.presentation.plan.PlanEditScreen
-import io.aethibo.combatcoachex.features.editcreate.presentation.planEditPresenter
-import io.aethibo.combatcoachex.features.editcreate.presentation.wokrout.WorkoutEditScreen
-import io.aethibo.combatcoach.features.create.workout.workoutEditPresenter
 import kotlinx.serialization.Serializable
 import org.koin.compose.koinInject
 import kotlin.reflect.typeOf
@@ -76,30 +71,30 @@ fun NavGraphBuilder.createEditScreen(
             }
 
             ItemType.Combo -> {
-                val state = comboEditPresenter(
-                    mode = mode,
-                    observeComboById = koinInject(),
-                    saveCombo = koinInject(),
-                    deleteCombo = koinInject(),
-                    onSaved = onSaved,
-                    onDeleted = onDeleted,
-                    onStartTimer = onStartTimer,
-                )
-                ComboEditScreen(state, onBack)
+//                val state = comboEditPresenter(
+//                    mode = mode,
+//                    observeComboById = koinInject(),
+//                    saveCombo = koinInject(),
+//                    deleteCombo = koinInject(),
+//                    onSaved = onSaved,
+//                    onDeleted = onDeleted,
+//                    onStartTimer = onStartTimer,
+//                )
+//                ComboEditScreen(state, onBack)
             }
 
             ItemType.Plan -> {
-                val state = planEditPresenter(
-                    mode = mode,
-                    observePlanById = koinInject(),
-                    observeWorkouts = koinInject(),
-                    observeCombos = koinInject(),
-                    savePlan = koinInject(),
-                    deletePlan = koinInject(),
-                    onSaved = onSaved,
-                    onDeleted = onDeleted,
-                )
-                PlanEditScreen(state, onBack)
+//                val state = planEditPresenter(
+//                    mode = mode,
+//                    observePlanById = koinInject(),
+//                    observeWorkouts = koinInject(),
+//                    observeCombos = koinInject(),
+//                    savePlan = koinInject(),
+//                    deletePlan = koinInject(),
+//                    onSaved = onSaved,
+//                    onDeleted = onDeleted,
+//                )
+//                PlanEditScreen(state, onBack)
             }
         }
     }

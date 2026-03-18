@@ -33,31 +33,18 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.NumberField
 import io.aethibo.combatcoach.core.ui.components.WorkoutDisciplineSelector
-import io.aethibo.combatcoach.core.ui.popup.DiscardChangesDialog
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.create.components.AddExerciseSheet
 import io.aethibo.combatcoach.features.create.components.DeleteConfirmPopup
 import io.aethibo.combatcoach.features.create.components.DiscardChangesPopup
 import io.aethibo.combatcoach.features.create.components.EditTopBar
+import io.aethibo.combatcoach.features.create.components.ExerciseRow
 import io.aethibo.combatcoach.features.create.components.NameDescriptionSection
 import io.aethibo.combatcoach.features.create.components.SaveBottomBar
 import io.aethibo.combatcoach.features.create.components.SectionDivider
 import io.aethibo.combatcoach.features.create.components.TypeToggle
 import io.aethibo.combatcoach.features.create.utils.CreateEditMode
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
-import io.aethibo.combatcoachex.core.ui.components.NumberField
-import io.aethibo.combatcoachex.core.ui.components.WorkoutDisciplineSelector
-import io.aethibo.combatcoachex.core.ui.popup.DiscardChangesDialog
-import io.aethibo.combatcoachex.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.AddExerciseSheet
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.DeleteConfirmDialog
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.EditTopBar
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.ExerciseRow
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.NameDescriptionSection
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.SaveBottomBar
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.SectionDivider
-import io.aethibo.combatcoachex.features.editcreate.presentation.components.TypeToggle
-import io.aethibo.combatcoachex.features.editcreate.presentation.model.CreateEditMode
-import io.aethibo.combatcoachex.features.shared.workout.domain.model.WorkoutType
 
 @Composable
 fun WorkoutEditScreen(
@@ -219,8 +206,8 @@ fun WorkoutEditScreen(
                     Spacer(Modifier.width(sp.xxs))
                     Text(
                         when (state.workoutType) {
-                            WorkoutType.CIRCUIT -> "Add Station"
-                            WorkoutType.STRENGTH -> "Add Exercise"
+                            WorkoutType.CIRCUIT -> stringResource(R.string.workout_edit_action_add_station)
+                            WorkoutType.STRENGTH -> stringResource(R.string.workout_edit_action_add_exercise)
                         }
                     )
                 }

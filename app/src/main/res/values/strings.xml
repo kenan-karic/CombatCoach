@@ -128,6 +128,27 @@
     <string name="workout_edit_action_add_station">Add Station</string>
     <string name="workout_edit_action_add_exercise">Add Exercise</string>
 
+    <string name="exercise_row_unnamed">Unnamed exercise</string>
+    <string name="exercise_row_label_name">Exercise name</string>
+    <string name="exercise_row_label_notes">Notes (optional)</string>
+
+    <string name="exercise_summary_sets">%1$d sets</string>
+    <string name="exercise_summary_reps">%1$d reps</string>
+    <string name="exercise_summary_seconds">%1$ds</string>
+    <string name="exercise_summary_rest">%1$ds rest</string>
+    <string name="exercise_summary_separator"> · </string>
+
+    <string name="exercise_field_sets">Sets</string>
+    <string name="exercise_field_reps">Reps</string>
+    <string name="exercise_field_seconds">Seconds</string>
+    <string name="exercise_field_rest">Rest (s)</string>
+
+    <string name="cd_move_up">Move exercise up</string>
+    <string name="cd_move_down">Move exercise down</string>
+    <string name="cd_remove_exercise">Remove exercise</string>
+    <string name="cd_expand_exercise">Expand exercise details</string>
+    <string name="cd_collapse_exercise">Collapse exercise details</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
