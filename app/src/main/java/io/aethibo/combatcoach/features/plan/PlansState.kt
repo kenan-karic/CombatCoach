@@ -13,6 +13,5 @@ data class PlansState(
     val hasPlans: Boolean get() = allPlans.isNotEmpty()
 
     val sectionTitle: String
-        get() = if (allPlans.isEmpty()) "No plans yet"
-        else "All Plans (${allPlans.size})"
+        get() = "All Plans (${allPlans.size})"
 }

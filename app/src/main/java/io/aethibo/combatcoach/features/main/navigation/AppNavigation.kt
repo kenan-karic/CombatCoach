@@ -18,6 +18,7 @@ import androidx.navigation.compose.rememberNavController
 import io.aethibo.combatcoach.features.dashboard.navigation.dashboardScreen
 import io.aethibo.combatcoach.features.dashboard.navigation.navigateToDashboard
 import io.aethibo.combatcoach.features.onboarding.navigation.onboardingScreen
+import io.aethibo.combatcoach.features.plan.navigation.plansScreen
 
 @Composable
 fun AppNavigation(startDestination: Any) {
@@ -87,6 +88,15 @@ fun AppNavigation(startDestination: Any) {
                 },
                 onNavigateToCombo = { comboId ->
                     //navController.navigateToCreateEdit(ItemType.Combo, comboId)
+                }
+            )
+
+            plansScreen(
+                onNavigateToPlan = {
+//                    navController::navigateToPlanDetails
+                },
+                onNavigateToCreate = {
+//                    navController.navigateToCreateEdit(ItemType.Plan)
                 }
             )
         }
