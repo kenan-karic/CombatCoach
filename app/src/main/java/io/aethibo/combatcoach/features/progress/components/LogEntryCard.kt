@@ -41,7 +41,7 @@ import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
 import kotlin.math.abs
 
 @Composable
-fun LogEntryCard(
+internal fun LogEntryCard(
     entry: LogEntryUi,
     onTap: () -> Unit,
     modifier: Modifier = Modifier,

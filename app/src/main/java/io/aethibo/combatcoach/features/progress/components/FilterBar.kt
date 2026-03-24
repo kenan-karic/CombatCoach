@@ -26,7 +26,7 @@ import io.aethibo.combatcoach.features.progress.ProgressFilter
 import io.aethibo.combatcoach.features.progress.label
 
 @Composable
-fun FilterBar(
+internal fun FilterBar(
     activeFilter: ProgressFilter,
     onSelect: (ProgressFilter) -> Unit,
     modifier: Modifier = Modifier,

@@ -28,7 +28,7 @@ import io.aethibo.combatcoach.shared.utils.toMinutesSeconds
 import kotlin.math.abs
 
 @Composable
-fun PreviousComparisonRow(
+internal fun PreviousComparisonRow(
     current: WorkoutLog,
     previous: WorkoutLog,
     modifier: Modifier = Modifier,

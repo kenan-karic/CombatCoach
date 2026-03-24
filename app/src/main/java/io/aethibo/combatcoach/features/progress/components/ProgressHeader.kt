@@ -45,7 +45,7 @@ import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 
 @Composable
-fun ProgressHeader(
+internal fun ProgressHeader(
     stats: DashboardStats,
     weekDays: List<WeekDay>,
     modifier: Modifier = Modifier,

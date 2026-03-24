@@ -21,7 +21,7 @@ import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.shared.log.domain.model.ExerciseLog
 
 @Composable
-fun ExerciseLogRow(exLog: ExerciseLog, modifier: Modifier = Modifier) {
+internal fun ExerciseLogRow(exLog: ExerciseLog, modifier: Modifier = Modifier) {
     val sp = LocalSpacing.current
 
     Surface(

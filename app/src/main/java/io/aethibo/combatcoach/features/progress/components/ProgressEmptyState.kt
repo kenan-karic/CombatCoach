@@ -28,7 +28,7 @@ import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.progress.ProgressFilter
 
 @Composable
-fun ProgressEmptyState(
+internal fun ProgressEmptyState(
     filter: ProgressFilter,
     modifier: Modifier = Modifier,
 ) {

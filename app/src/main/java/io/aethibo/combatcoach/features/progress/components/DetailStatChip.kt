@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 
 @Composable
-fun DetailStatChip(
+internal fun DetailStatChip(
     label: String,
     value: String,
     modifier: Modifier = Modifier,

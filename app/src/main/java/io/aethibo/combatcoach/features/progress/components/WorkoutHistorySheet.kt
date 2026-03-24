@@ -40,7 +40,7 @@ import io.aethibo.combatcoach.shared.utils.toMinutesSeconds
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WorkoutHistorySheet(
+internal fun WorkoutHistorySheet(
     entry: LogEntryUi,
     onDelete: () -> Unit,
     onDismiss: () -> Unit,
