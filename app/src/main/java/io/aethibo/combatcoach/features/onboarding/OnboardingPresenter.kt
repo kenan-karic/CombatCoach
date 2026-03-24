@@ -9,15 +9,15 @@ import io.aethibo.combatcoach.core.ui.theme.MintGreen
 import io.aethibo.combatcoach.core.ui.theme.Periwinkle
 import io.aethibo.combatcoach.features.onboarding.model.IllustrationKey
 import io.aethibo.combatcoach.features.onboarding.model.OnboardingPage
-import io.aethibo.combatcoach.shared.user.domain.usecase.LoadUserPrefsUseCase
 import io.aethibo.combatcoach.shared.user.domain.model.UserPrefs
+import io.aethibo.combatcoach.shared.user.domain.usecase.LoadUserPrefsUseCase
 import io.aethibo.combatcoach.shared.user.domain.usecase.SaveUserPrefsUseCase
 import kotlinx.coroutines.launch
 
 @Composable
 fun onboardingPresenter(
-    savePrefs: io.aethibo.combatcoach.shared.user.domain.usecase.SaveUserPrefsUseCase,
-    loadPrefs: io.aethibo.combatcoach.shared.user.domain.usecase.LoadUserPrefsUseCase,
+    savePrefs: SaveUserPrefsUseCase,
+    loadPrefs: LoadUserPrefsUseCase,
     onFinished: () -> Unit,
 ): OnboardingState {
     val scope = rememberCoroutineScope()
@@ -30,7 +30,7 @@ fun onboardingPresenter(
             },
             ifLeft = {
                 savePrefs(
-                    _root_ide_package_.io.aethibo.combatcoach.shared.user.domain.model.UserPrefs(
+                    UserPrefs(
                         onboardingComplete = true
                     )
                 )

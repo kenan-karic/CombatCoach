@@ -8,6 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
+import io.aethibo.combatcoach.BuildConfig
 import io.aethibo.combatcoach.shared.plan.domain.usecase.ClearActivePlanUseCase
 import io.aethibo.combatcoach.shared.user.domain.model.UserPrefs
 import io.aethibo.combatcoach.shared.user.domain.usecase.LoadUserPrefsUseCase
@@ -29,18 +30,14 @@ fun settingsPresenter(
     var isSaving by remember { mutableStateOf(false) }
     var activeSheet by remember { mutableStateOf(SettingsSheet.NONE) }
     var showResetDialog by remember { mutableStateOf(false) }
+    var loadError by remember { mutableStateOf(false) }
 
     // Load prefs once on entry
     LaunchedEffect(Unit) {
-        loadPrefs()
-            .fold(
-                ifRight = { userPrefs ->
-                    prefs = userPrefs
-                },
-                ifLeft = {
-
-                }
-            )
+        loadPrefs().fold(
+            ifRight = { userPrefs -> prefs = userPrefs },
+            ifLeft = { loadError = true }
+        )
         isLoading = false
     }
 
@@ -66,9 +63,6 @@ fun settingsPresenter(
             }
     }
 
-    // FIX: eventSink wrapped in remember { } — stable lambda reference.
-    // Without this, every ToggleRow and PickerRow recomposes whenever any
-    // pref changes (e.g. toggling sound invalidates the vibration row too).
     val eventSink: (SettingsEvent) -> Unit = remember {
         { event ->
             when (event) {
@@ -94,11 +88,13 @@ fun settingsPresenter(
 
                 SettingsEvent.ConfirmReset -> {
                     scope.launch {
-                        clearActivePlan()
-                        // Reset to defaults but preserve onboardingComplete — the user
-                        // has already seen onboarding and resetting prefs shouldn't re-show it.
-                        prefs = UserPrefs(onboardingComplete = true)
-                        showResetDialog = false
+                        clearActivePlan().fold(
+                            ifRight = {
+                                prefs = UserPrefs(onboardingComplete = true)
+                                showResetDialog = false
+                            },
+                            ifLeft = { showResetDialog = false }
+                        )
                     }
                 }
             }
@@ -111,7 +107,7 @@ fun settingsPresenter(
         isSaving = isSaving,
         activeSheet = activeSheet,
         showResetDialog = showResetDialog,
-        appVersion = "1.0.0",
+        appVersion = BuildConfig.VERSION_NAME,
         eventSink = eventSink,
     )
 }

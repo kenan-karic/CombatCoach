@@ -57,6 +57,12 @@ fun SettingsScreen(state: SettingsState) {
         return
     }
 
+    if (state.loadError) {
+        // e.g. a Snackbar or an inline error banner below the header
+        // "Could not load saved preferences. Showing defaults."
+        return
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
