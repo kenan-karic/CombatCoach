@@ -206,6 +206,33 @@
 
     <string name="streak_days_suffix">%1$d days</string>
 
+    <string name="history_label_duration">Duration</string>
+    <string name="history_label_sets">Sets</string>
+    <string name="history_label_reps">Reps</string>
+    <string name="history_header_breakdown">Exercise breakdown</string>
+    <string name="history_header_notes">Notes</string>
+
+    <string name="cd_delete_log">Delete log</string>
+
+    <string name="history_delete_title">Delete workout log?</string>
+    <string name="history_delete_message">This action cannot be undone. This session will be removed from your progress history.</string>
+
+    <string name="comparison_faster">Faster than last time</string>
+    <string name="comparison_neutral">Compared to last time</string>
+    <string name="comparison_details">Previous: %1$s  ·  Difference: %2$s%3$s</string>
+
+    <string name="exercise_sets_count">%1$d sets</string>
+    <string name="exercise_reps_suffix">%1$dr</string>
+    <string name="exercise_weight_suffix">%1$.1fkg</string>
+
+    <string name="empty_progress_all">No sessions logged yet</string>
+    <string name="empty_progress_workouts">No strength workouts yet</string>
+    <string name="empty_progress_combos">No combat sessions yet</string>
+    <string name="empty_progress_week">No sessions this week</string>
+    <string name="empty_progress_month">No sessions this month</string>
+
+    <string name="empty_progress_description">Complete a workout or combo to see your history here.</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>

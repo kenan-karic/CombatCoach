@@ -19,21 +19,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.DevicesPreview
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.progress.components.FilterBar
+import io.aethibo.combatcoach.features.progress.components.LogEntryCard
+import io.aethibo.combatcoach.features.progress.components.ProgressEmptyState
 import io.aethibo.combatcoach.features.progress.components.ProgressHeader
+import io.aethibo.combatcoach.features.progress.components.WorkoutHistorySheet
+import io.aethibo.combatcoach.features.progress.model.LogEntryUi
+import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
-import io.aethibo.combatcoach.features.progress.components.FilterBar
-import io.aethibo.combatcoach.features.progress.components.LogEntryCard
-import io.aethibo.combatcoach.features.progress.model.LogEntryUi
-import io.aethibo.combatcoach.features.progress.model.WeekDay
-import io.aethibo.combatcoachex.features.progress.presentation.components.ProgressEmptyState
-import io.aethibo.combatcoachex.features.progress.presentation.components.WorkoutHistorySheet
-import kotlin.collections.emptyList
-import kotlin.collections.emptyMap
-import kotlin.collections.mapOf
-import kotlin.to
 
 @Composable
 fun ProgressScreen(state: ProgressState) {

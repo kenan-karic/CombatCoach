@@ -1,6 +1,6 @@
 package io.aethibo.combatcoach.features.progress
 
-import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
+import io.aethibo.combatcoach.features.progress.model.LogEntryUi
 
 sealed interface ProgressEvent {
     data class FilterSelected(val filter: ProgressFilter) : ProgressEvent
