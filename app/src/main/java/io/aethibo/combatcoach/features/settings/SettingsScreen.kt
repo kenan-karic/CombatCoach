@@ -32,6 +32,7 @@ import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.settings.components.ActionRow
 import io.aethibo.combatcoach.features.settings.components.AppBrandingFooter
 import io.aethibo.combatcoach.features.settings.components.AppInfoRow
+import io.aethibo.combatcoach.features.settings.components.DisciplinePickerSheet
 import io.aethibo.combatcoachex.features.settings.presentation.components.ActionRow
 import io.aethibo.combatcoachex.features.settings.presentation.components.AppInfoRow
 import io.aethibo.combatcoachex.features.settings.presentation.components.DisciplinePickerSheet
@@ -40,8 +41,10 @@ import io.aethibo.combatcoachex.features.settings.presentation.components.ResetC
 import io.aethibo.combatcoach.features.settings.components.SettingsDivider
 import io.aethibo.combatcoach.features.settings.components.SettingsHeader
 import io.aethibo.combatcoach.features.settings.components.SettingsSection
+import io.aethibo.combatcoach.features.settings.components.ThemePickerSheet
 import io.aethibo.combatcoachex.features.settings.presentation.components.ThemePickerSheet
 import io.aethibo.combatcoach.features.settings.components.ToggleRow
+import io.aethibo.combatcoach.features.settings.components.WeightUnitPickerSheet
 import io.aethibo.combatcoachex.features.settings.presentation.components.WeightUnitPickerSheet
 
 @Composable
