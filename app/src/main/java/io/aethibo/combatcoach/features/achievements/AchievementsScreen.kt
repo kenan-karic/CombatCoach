@@ -29,6 +29,7 @@ import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.achievements.components.AchievementsHeader
 import io.aethibo.combatcoach.features.achievements.components.CategoryTabRow
 import io.aethibo.combatcoach.features.achievements.components.AchievementCard
+import io.aethibo.combatcoach.features.achievements.components.AchievementDetailSheet
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementDetailSheet
 import io.aethibo.combatcoachex.features.achievements.presentation.components.CelebrationOverlay
 import io.aethibo.combatcoach.shared.achievement.domain.model.Achievement
