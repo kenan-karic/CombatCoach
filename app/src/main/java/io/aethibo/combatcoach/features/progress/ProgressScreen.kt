@@ -23,10 +23,9 @@ import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
-import io.aethibo.combatcoachex.features.progress.presentation.components.FilterBar
+import io.aethibo.combatcoach.features.progress.components.FilterBar
 import io.aethibo.combatcoachex.features.progress.presentation.components.LogEntryCard
 import io.aethibo.combatcoachex.features.progress.presentation.components.ProgressEmptyState
-import io.aethibo.combatcoachex.features.progress.presentation.components.ProgressHeader
 import io.aethibo.combatcoachex.features.progress.presentation.components.WorkoutHistorySheet
 import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
 import io.aethibo.combatcoachex.features.progress.presentation.model.WeekDay

@@ -1,5 +1,6 @@
 package io.aethibo.combatcoach.features.progress
 
+import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
 import io.aethibo.combatcoachex.features.progress.presentation.model.WeekDay
@@ -26,4 +27,3 @@ data class ProgressState(
     val isLoading: Boolean = true,
     val eventSink: (ProgressEvent) -> Unit = {},
 )
-
