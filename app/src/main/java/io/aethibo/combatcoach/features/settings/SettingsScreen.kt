@@ -20,7 +20,6 @@ import androidx.compose.material.icons.outlined.Shield
 import androidx.compose.material.icons.outlined.SportsMartialArts
 import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.material.icons.outlined.Vibration
-import androidx.compose.material.icons.outlined.VolumeUp
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -33,19 +32,14 @@ import io.aethibo.combatcoach.features.settings.components.ActionRow
 import io.aethibo.combatcoach.features.settings.components.AppBrandingFooter
 import io.aethibo.combatcoach.features.settings.components.AppInfoRow
 import io.aethibo.combatcoach.features.settings.components.DisciplinePickerSheet
-import io.aethibo.combatcoachex.features.settings.presentation.components.ActionRow
-import io.aethibo.combatcoachex.features.settings.presentation.components.AppInfoRow
-import io.aethibo.combatcoachex.features.settings.presentation.components.DisciplinePickerSheet
 import io.aethibo.combatcoach.features.settings.components.PickerRow
-import io.aethibo.combatcoachex.features.settings.presentation.components.ResetConfirmDialog
+import io.aethibo.combatcoach.features.settings.components.ResetConfirmDialog
 import io.aethibo.combatcoach.features.settings.components.SettingsDivider
 import io.aethibo.combatcoach.features.settings.components.SettingsHeader
 import io.aethibo.combatcoach.features.settings.components.SettingsSection
 import io.aethibo.combatcoach.features.settings.components.ThemePickerSheet
-import io.aethibo.combatcoachex.features.settings.presentation.components.ThemePickerSheet
 import io.aethibo.combatcoach.features.settings.components.ToggleRow
 import io.aethibo.combatcoach.features.settings.components.WeightUnitPickerSheet
-import io.aethibo.combatcoachex.features.settings.presentation.components.WeightUnitPickerSheet
 
 @Composable
 fun SettingsScreen(state: SettingsState) {
@@ -198,7 +192,7 @@ fun SettingsScreen(state: SettingsState) {
     if (state.showResetDialog) {
         ResetConfirmDialog(
             onConfirm = { state.eventSink(SettingsEvent.ConfirmReset) },
-            onDismiss = { state.eventSink(SettingsEvent.DismissReset) },
+            onDismissRequest = { state.eventSink(SettingsEvent.DismissReset) },
         )
     }
 }

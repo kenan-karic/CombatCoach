@@ -296,6 +296,9 @@
     <string name="settings_value_offline_only">Offline only</string>
     <string name="settings_value_none">None</string>
 
+    <string name="dialog_reset_title">Reset preferences?</string>
+    <string name="dialog_reset_desc">All settings will be restored to their defaults. Your workouts, combos, plans, and progress history will not be affected.</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
@@ -338,6 +341,7 @@
     <string name="action_acknowledge">Acknowledge</string>
     <string name="action_save">Save</string>
     <string name="action_add">Add</string>
+    <string name="action_reset">Reset</string>
 
     <!-- Test values -->
     <string name="test_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>

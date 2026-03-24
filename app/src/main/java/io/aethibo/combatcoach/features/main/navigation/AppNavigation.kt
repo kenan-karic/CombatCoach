@@ -23,6 +23,7 @@ import io.aethibo.combatcoach.features.plan.navigation.plansScreen
 import io.aethibo.combatcoach.features.plandetail.navigation.navigateToPlanDetails
 import io.aethibo.combatcoach.features.plandetail.navigation.planDetailsScreen
 import io.aethibo.combatcoach.features.progress.navigation.progressScreen
+import io.aethibo.combatcoach.features.settings.navigation.settingsScreen
 import io.aethibo.combatcoach.shared.utils.ItemType
 import io.aethibo.combatcoachex.features.editcreate.presentation.navigation.createEditScreen
 import io.aethibo.combatcoachex.features.editcreate.presentation.navigation.navigateToCreateEdit
@@ -121,6 +122,8 @@ fun AppNavigation(startDestination: Any) {
             progressScreen()
 
             achievementsScreen()
+
+            settingsScreen()
         }
     }
 }
