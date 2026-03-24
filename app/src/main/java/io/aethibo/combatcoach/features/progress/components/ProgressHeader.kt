@@ -81,8 +81,8 @@ internal fun ProgressHeader(
             Spacer(Modifier.width(sp.small))
             BigStatCard(
                 label = stringResource(R.string.label_current_streak),
-                value = "${stats.currentStreak} days",
-                icon = Icons.Filled.LocalFireDepartment, // LocalFire
+                value = stringResource(R.string.streak_days_suffix, stats.currentStreak),
+                icon = Icons.Filled.LocalFireDepartment,
                 color = CoralPink,
                 modifier = Modifier.weight(1f),
             )
@@ -99,7 +99,7 @@ internal fun ProgressHeader(
         Spacer(Modifier.height(sp.large))
 
         Text(
-            "This week",
+            text = stringResource(R.string.this_week_title),
             style = MaterialTheme.typography.titleSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -186,7 +186,6 @@ private fun WeeklyActivityChart(weekDays: List<WeekDay>) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Bottom,
             ) {
-                // Count badge if sessions > 0
                 if (day.sessionCount > 0) {
                     Text(
                         text = day.sessionCount.toString(),
@@ -197,7 +196,6 @@ private fun WeeklyActivityChart(weekDays: List<WeekDay>) {
                     Spacer(Modifier.height(2.dp))
                 }
 
-                // Bar
                 val barColor = when {
                     day.isToday -> MaterialTheme.colorScheme.primary
                     day.sessionCount > 0 -> MaterialTheme.colorScheme.primaryContainer

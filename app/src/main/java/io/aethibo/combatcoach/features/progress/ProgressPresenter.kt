@@ -41,7 +41,6 @@ fun progressPresenter(
     observeCombos: ObserveCombosUseCase,
     observeDashboard: ObserveDashboardStatsUseCase,
     deleteLog: DeleteWorkoutLogUseCase,
-    onNavigateToWorkout: (Int) -> Unit,
 ): ProgressState {
     val scope = rememberCoroutineScope()
 

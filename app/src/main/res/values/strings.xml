@@ -200,8 +200,8 @@
     <string name="progress_title">Progress</string>
     <string name="this_week_title">This week</string>
 
-    <string name="label_total_sessions">Total sessions</string>
-    <string name="label_current_streak">Current streak</string>
+    <string name="label_total_sessions">Total\nsessions</string>
+    <string name="label_current_streak">Current\nstreak</string>
     <string name="label_total_minutes">Total\nminutes</string>
 
     <string name="streak_days_suffix">%1$d days</string>
