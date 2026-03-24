@@ -18,8 +18,6 @@ import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.utils.TrainingDiscipline
 import io.aethibo.combatcoach.shared.utils.WorkoutDiscipline
 
-// ── Martial-arts discipline selector (Combo screens) ──────────────────────────
-
 /**
  * Shows only martial-arts disciplines: STRIKING, GRAPPLING, MMA.
  * STRENGTH and GENERAL are intentionally excluded — they don't belong on a combo.
@@ -31,7 +29,6 @@ fun DisciplineSelector(
     modifier: Modifier = Modifier,
 ) {
     val sp = LocalSpacing.current
-    val martialArts = listOf(Discipline.STRIKING, Discipline.GRAPPLING, Discipline.MMA)
 
     Row(
         modifier = modifier
@@ -39,7 +36,7 @@ fun DisciplineSelector(
             .horizontalScroll(rememberScrollState()),
         horizontalArrangement = Arrangement.spacedBy(sp.xs),
     ) {
-        martialArts.forEach { discipline ->
+        Discipline.entries.forEach { discipline ->
             val isSelected = discipline == selected
             val color = discipline.accentColor()
             FilterChip(
