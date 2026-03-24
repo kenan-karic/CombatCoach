@@ -10,5 +10,5 @@ data class WorkoutLog(
     val completedAt: Long = System.currentTimeMillis(),
     val exerciseLogs: List<ExerciseLog> = emptyList(),
     val notes: String = "",
-    val rating: Int = 0,               // 0 = unrated, 1–5
+    val rating: Int = 0, // 0 = unrated, 1–5
 )

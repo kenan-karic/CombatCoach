@@ -7,6 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import io.aethibo.combatcoach.features.progress.model.LogEntryUi
+import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoach.shared.combo.domain.model.Combo
 import io.aethibo.combatcoach.shared.combo.domain.usecase.ObserveCombosUseCase
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
@@ -17,29 +19,13 @@ import io.aethibo.combatcoach.shared.log.domain.usecase.ObserveWorkoutLogsUseCas
 import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.utils.startOfMonthEpoch
 import io.aethibo.combatcoach.shared.utils.startOfWeekEpoch
+import io.aethibo.combatcoach.shared.utils.toDisplayDate
 import io.aethibo.combatcoach.shared.workout.domain.model.Workout
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
 import io.aethibo.combatcoach.shared.workout.domain.usecase.ObserveWorkoutsUseCase
-import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
-import io.aethibo.combatcoachex.features.progress.presentation.model.WeekDay
-import io.aethibo.combatcoachex.features.shared.combo.domain.model.Combo
-import io.aethibo.combatcoachex.features.shared.combo.domain.usease.ObserveCombosUseCase
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
-import io.aethibo.combatcoachex.features.shared.log.domain.model.WorkoutLog
-import io.aethibo.combatcoachex.features.shared.log.domain.usecase.DeleteWorkoutLogUseCase
-import io.aethibo.combatcoachex.features.shared.log.domain.usecase.ObserveDashboardStatsUseCase
-import io.aethibo.combatcoachex.features.shared.log.domain.usecase.ObserveWorkoutLogsUseCase
-import io.aethibo.combatcoachex.features.shared.utils.Discipline
-import io.aethibo.combatcoachex.features.shared.utils.startOfMonthEpoch
-import io.aethibo.combatcoachex.features.shared.utils.startOfWeekEpoch
-import io.aethibo.combatcoachex.features.shared.utils.toDisplayDate
-import io.aethibo.combatcoachex.features.shared.workout.domain.model.Workout
-import io.aethibo.combatcoachex.features.shared.workout.domain.model.WorkoutType
-import io.aethibo.combatcoachex.features.shared.workout.domain.usecase.ObserveWorkoutsUseCase
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import java.util.Calendar
-import kotlin.collections.filter
 
 private data class ProgressData(
     val logs: List<WorkoutLog> = emptyList(),

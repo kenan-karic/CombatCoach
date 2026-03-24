@@ -1,10 +1,8 @@
 package io.aethibo.combatcoach.features.progress
 
+import io.aethibo.combatcoach.features.progress.model.LogEntryUi
 import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
-import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
-import io.aethibo.combatcoachex.features.progress.presentation.model.WeekDay
-import io.aethibo.combatcoachex.features.shared.log.domain.model.DashboardStats
 
 enum class ProgressFilter { ALL, WORKOUTS, COMBOS, THIS_WEEK, THIS_MONTH }
 

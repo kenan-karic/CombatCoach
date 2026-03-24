@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -24,11 +25,11 @@ import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import io.aethibo.combatcoach.shared.utils.Discipline
 import io.aethibo.combatcoach.shared.workout.domain.model.WorkoutType
 import io.aethibo.combatcoach.features.progress.components.FilterBar
-import io.aethibo.combatcoachex.features.progress.presentation.components.LogEntryCard
+import io.aethibo.combatcoach.features.progress.components.LogEntryCard
+import io.aethibo.combatcoach.features.progress.model.LogEntryUi
+import io.aethibo.combatcoach.features.progress.model.WeekDay
 import io.aethibo.combatcoachex.features.progress.presentation.components.ProgressEmptyState
 import io.aethibo.combatcoachex.features.progress.presentation.components.WorkoutHistorySheet
-import io.aethibo.combatcoachex.features.progress.presentation.model.LogEntryUi
-import io.aethibo.combatcoachex.features.progress.presentation.model.WeekDay
 import kotlin.collections.emptyList
 import kotlin.collections.emptyMap
 import kotlin.collections.mapOf
@@ -85,8 +86,6 @@ fun ProgressScreen(state: ProgressState) {
                 )
             }
         } else {
-            // FIX: groupedEntries is pre-computed in the Presenter.
-            // The Screen just iterates — no groupBy() on every scroll frame.
             state.groupedEntries.forEach { (dateLabel, entries) ->
                 item(key = "header-$dateLabel") {
                     Text(
