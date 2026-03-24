@@ -17,6 +17,7 @@ fun achievementsPresenter(
     onFinished: () -> Unit = {},
 ): AchievementsState {
     val achievements by observeAchievements().collectAsState(initial = emptyList())
+    var isLoading by remember { mutableStateOf(true) }
 
     // ── UI-only state ──────────────────────────────────────────────────────
     var activeCategory by remember { mutableStateOf<AchievementCategory?>(null) }
@@ -25,6 +26,7 @@ fun achievementsPresenter(
     var previouslyEarnedIds by remember { mutableStateOf<Set<Int>>(emptySet()) }
 
     LaunchedEffect(achievements) {
+        isLoading = false
         val currentEarnedIds = achievements.filter { it.isEarned }.map { it.id }.toSet()
 
         if (previouslyEarnedIds.isNotEmpty()) {
@@ -70,7 +72,7 @@ fun achievementsPresenter(
         activeCategory = activeCategory,
         selectedAchievement = selectedAchievement,
         recentlyEarned = recentlyEarned,
-        isLoading = false,
+        isLoading = isLoading,
         eventSink = eventSink,
     )
 }
