@@ -246,6 +246,7 @@
 
     <string name="achievement_earned_on">Earned on %1$s</string>
     <string name="achievement_detail_progress_format">%1$d / %2$d  ·  %3$d%%</string>
+    <string name="achievement_unlocked_title">🏆  Achievement Unlocked!</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>

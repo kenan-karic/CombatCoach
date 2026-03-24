@@ -15,6 +15,7 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import io.aethibo.combatcoach.features.achievements.navigation.achievementsScreen
 import io.aethibo.combatcoach.features.dashboard.navigation.dashboardScreen
 import io.aethibo.combatcoach.features.dashboard.navigation.navigateToDashboard
 import io.aethibo.combatcoach.features.onboarding.navigation.onboardingScreen
@@ -118,6 +119,8 @@ fun AppNavigation(startDestination: Any) {
             )
 
             progressScreen()
+
+            achievementsScreen()
         }
     }
 }

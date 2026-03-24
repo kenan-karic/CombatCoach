@@ -26,16 +26,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoach.features.achievements.components.AchievementsHeader
-import io.aethibo.combatcoach.features.achievements.components.CategoryTabRow
 import io.aethibo.combatcoach.features.achievements.components.AchievementCard
 import io.aethibo.combatcoach.features.achievements.components.AchievementDetailSheet
-import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementDetailSheet
-import io.aethibo.combatcoachex.features.achievements.presentation.components.CelebrationOverlay
+import io.aethibo.combatcoach.features.achievements.components.AchievementsHeader
+import io.aethibo.combatcoach.features.achievements.components.CategoryTabRow
+import io.aethibo.combatcoach.features.achievements.components.CelebrationOverlay
 import io.aethibo.combatcoach.shared.achievement.domain.model.Achievement
 import io.aethibo.combatcoach.shared.achievement.domain.model.AchievementCategory
 import io.aethibo.combatcoach.shared.achievement.domain.utils.AchievementKeys
-import kotlin.collections.emptyList
 
 @Composable
 fun AchievementsScreen(state: AchievementsState, modifier: Modifier = Modifier) {

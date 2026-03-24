@@ -3,6 +3,7 @@ package io.aethibo.combatcoach
 import android.app.Application
 import io.aethibo.combatcoach.core.database.databaseModule
 import io.aethibo.combatcoach.shared.achievement.data.di.achievementsModule
+import io.aethibo.combatcoach.shared.achievement.domain.usecase.SeedAchievementsUseCase
 import io.aethibo.combatcoach.shared.combo.data.di.comboModule
 import io.aethibo.combatcoach.shared.log.data.di.workoutLogModule
 import io.aethibo.combatcoach.shared.plan.data.di.planModule
@@ -11,9 +12,11 @@ import io.aethibo.combatcoach.shared.workout.data.di.workoutModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
@@ -24,6 +27,8 @@ class CombatCoachApplication : Application(), KoinComponent,
 
         setupKoin()
         setupTimberLogger()
+
+        launch { get<SeedAchievementsUseCase>().invoke() }
     }
 
     private fun setupKoin() {
