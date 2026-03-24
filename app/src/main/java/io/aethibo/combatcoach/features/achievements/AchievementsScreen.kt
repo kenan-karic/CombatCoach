@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
 import io.aethibo.combatcoach.features.achievements.components.AchievementsHeader
+import io.aethibo.combatcoach.features.achievements.components.CategoryTabRow
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementCard
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementDetailSheet
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementsHeader
@@ -96,10 +97,7 @@ fun AchievementsScreen(state: AchievementsState, modifier: Modifier = Modifier) 
                 }
             } else {
                 val rows = state.filteredAchievements.chunked(2)
-                items(
-                    items = rows,
-                    key = { it.first().id },
-                ) { row ->
+                items(items = rows, key = { it.first().id }) { row ->
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()

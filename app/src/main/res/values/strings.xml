@@ -238,6 +238,11 @@
     <string name="achievements_earned_label">achievements earned</string>
     <string name="achievements_count_divider"> / %1$d</string>
     <string name="achievements_percent_complete">%1$d%% complete</string>
+    <string name="achievement_category_all">All</string>
+    <string name="achievement_category_strength">Strength</string>
+    <string name="achievement_category_combat">Combat</string>
+    <string name="achievement_category_milestones">Milestones</string>
+    <string name="achievement_category_social">Social</string>
 
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
