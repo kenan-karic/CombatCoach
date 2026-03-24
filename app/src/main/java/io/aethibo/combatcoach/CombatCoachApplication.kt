@@ -2,6 +2,7 @@ package io.aethibo.combatcoach
 
 import android.app.Application
 import io.aethibo.combatcoach.core.database.databaseModule
+import io.aethibo.combatcoach.shared.achievement.data.di.achievementsModule
 import io.aethibo.combatcoach.shared.combo.data.di.comboModule
 import io.aethibo.combatcoach.shared.log.data.di.workoutLogModule
 import io.aethibo.combatcoach.shared.plan.data.di.planModule
@@ -35,7 +36,8 @@ class CombatCoachApplication : Application(), KoinComponent,
                 workoutModule,
                 comboModule,
                 planModule,
-                workoutLogModule
+                workoutLogModule,
+                achievementsModule,
             )
         }
     }

@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import io.aethibo.combatcoach.shared.achievement.data.dao.AchievementDao
+import io.aethibo.combatcoach.shared.achievement.data.dao.entity.AchievementEntity
 import io.aethibo.combatcoach.shared.combo.data.dao.ComboDao
 import io.aethibo.combatcoach.shared.combo.data.dao.entity.ComboEntity
 import io.aethibo.combatcoach.shared.log.data.dao.WorkoutLogDao
@@ -13,6 +15,7 @@ import io.aethibo.combatcoach.shared.plan.data.dao.ActivePlanDao
 import io.aethibo.combatcoach.shared.plan.data.dao.PlanDao
 import io.aethibo.combatcoach.shared.plan.data.dao.entity.ActivePlanEntity
 import io.aethibo.combatcoach.shared.plan.data.dao.entity.PlanEntity
+import io.aethibo.combatcoach.shared.user.data.dao.UserPrefsDao
 import io.aethibo.combatcoach.shared.user.data.dao.entity.UserPrefsEntity
 import io.aethibo.combatcoach.shared.workout.data.dao.WorkoutDao
 import io.aethibo.combatcoach.shared.workout.data.dao.entity.WorkoutEntity
@@ -24,7 +27,7 @@ import io.aethibo.combatcoach.shared.workout.data.dao.entity.WorkoutEntity
         PlanEntity::class,
         ActivePlanEntity::class,
         WorkoutLogEntity::class,
-//        AchievementEntity::class,
+        AchievementEntity::class,
         UserPrefsEntity::class,
 
     ],
@@ -38,9 +41,8 @@ abstract class CombatCoachDatabase : RoomDatabase() {
     abstract fun planDao(): PlanDao
     abstract fun activePlanDao(): ActivePlanDao
     abstract fun workoutLogDao(): WorkoutLogDao
-
-    //    abstract fun achievementDao(): AchievementDao
-    abstract fun userPrefsDao(): io.aethibo.combatcoach.shared.user.data.dao.UserPrefsDao
+    abstract fun achievementDao(): AchievementDao
+    abstract fun userPrefsDao(): UserPrefsDao
 
     companion object {
         const val DATABASE_NAME = "combat_coach.db"
