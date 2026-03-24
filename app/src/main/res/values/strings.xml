@@ -196,6 +196,16 @@
 
     <string name="plan_edit_action_add_day">Add Day</string>
 
+    <!-- Progress -->
+    <string name="progress_title">Progress</string>
+    <string name="this_week_title">This week</string>
+
+    <string name="label_total_sessions">Total sessions</string>
+    <string name="label_current_streak">Current streak</string>
+    <string name="label_total_minutes">Total\nminutes</string>
+
+    <string name="streak_days_suffix">%1$d days</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>

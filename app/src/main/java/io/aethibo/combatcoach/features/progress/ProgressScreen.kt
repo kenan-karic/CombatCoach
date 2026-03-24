@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.DevicesPreview
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.progress.components.ProgressHeader
 import io.aethibo.combatcoach.shared.log.domain.model.DashboardStats
 import io.aethibo.combatcoach.shared.log.domain.model.WorkoutLog
 import io.aethibo.combatcoach.shared.utils.Discipline
