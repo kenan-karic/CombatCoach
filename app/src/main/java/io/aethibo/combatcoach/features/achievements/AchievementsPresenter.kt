@@ -14,7 +14,6 @@ import io.aethibo.combatcoach.shared.achievement.domain.usecase.ObserveAchieveme
 @Composable
 fun achievementsPresenter(
     observeAchievements: ObserveAchievementsUseCase,
-    onFinished: () -> Unit = {},
 ): AchievementsState {
     val achievements by observeAchievements().collectAsState(initial = emptyList())
     var isLoading by remember { mutableStateOf(true) }

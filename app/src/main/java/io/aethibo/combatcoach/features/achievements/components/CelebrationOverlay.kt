@@ -25,7 +25,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -58,10 +60,13 @@ internal fun CelebrationOverlay(
         onDismiss()
     }
 
+    var visible by remember { mutableStateOf(false) }
+    LaunchedEffect(Unit) { visible = true }
+
     val scale by animateFloatAsState(
-        targetValue = 1f,
+        targetValue   = if (visible) 1f else 0f,
         animationSpec = spring(
-            stiffness = Spring.StiffnessMedium,
+            stiffness    = Spring.StiffnessMedium,
             dampingRatio = Spring.DampingRatioMediumBouncy,
         ),
         label = "celebrationScale",

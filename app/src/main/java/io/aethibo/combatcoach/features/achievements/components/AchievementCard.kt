@@ -35,7 +35,7 @@ import io.aethibo.combatcoach.shared.achievement.domain.utils.AchievementKeys
 import io.aethibo.combatcoach.shared.utils.toDisplayDate
 
 @Composable
-fun AchievementCard(
+internal fun AchievementCard(
     achievement: Achievement,
     onTap: () -> Unit,
     modifier: Modifier = Modifier,
