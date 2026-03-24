@@ -25,15 +25,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
-import io.aethibo.combatcoachex.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.settings.components.AppBrandingFooter
 import io.aethibo.combatcoachex.features.settings.presentation.components.ActionRow
 import io.aethibo.combatcoachex.features.settings.presentation.components.AppBrandingFooter
 import io.aethibo.combatcoachex.features.settings.presentation.components.AppInfoRow
 import io.aethibo.combatcoachex.features.settings.presentation.components.DisciplinePickerSheet
 import io.aethibo.combatcoachex.features.settings.presentation.components.PickerRow
 import io.aethibo.combatcoachex.features.settings.presentation.components.ResetConfirmDialog
-import io.aethibo.combatcoachex.features.settings.presentation.components.SettingsDivider
+import io.aethibo.combatcoach.features.settings.components.SettingsDivider
+import io.aethibo.combatcoach.features.settings.components.SettingsHeader
+import io.aethibo.combatcoach.features.settings.components.SettingsSection
 import io.aethibo.combatcoachex.features.settings.presentation.components.SettingsHeader
 import io.aethibo.combatcoachex.features.settings.presentation.components.SettingsSection
 import io.aethibo.combatcoachex.features.settings.presentation.components.ThemePickerSheet
@@ -67,7 +71,7 @@ fun SettingsScreen(state: SettingsState) {
         SettingsHeader(isSaving = state.isSaving)
 
         // ── Appearance ─────────────────────────────────────
-        SettingsSection(title = "Appearance") {
+        SettingsSection(titleResId = R.string.settings_section_appearance) {
             PickerRow(
                 icon = Icons.Outlined.Palette,
                 label = "Theme",
@@ -77,7 +81,7 @@ fun SettingsScreen(state: SettingsState) {
         }
 
         // ── Training defaults ──────────────────────────────
-        SettingsSection(title = "Training") {
+        SettingsSection(titleResId = R.string.settings_section_training) {
             PickerRow(
                 icon = Icons.Outlined.SportsMartialArts,
                 label = "Default discipline",
@@ -94,7 +98,7 @@ fun SettingsScreen(state: SettingsState) {
         }
 
         // ── Audio & Haptics ────────────────────────────────
-        SettingsSection(title = "Audio & Haptics") {
+        SettingsSection(titleResId = R.string.settings_section_audio_haptic) {
             ToggleRow(
                 icon = Icons.Outlined.VolumeUp,
                 label = "Sound effects",
@@ -121,7 +125,7 @@ fun SettingsScreen(state: SettingsState) {
         }
 
         // ── Data ───────────────────────────────────────────
-        SettingsSection(title = "Data") {
+        SettingsSection(titleResId = R.string.settings_section_data) {
             ActionRow(
                 icon = Icons.Outlined.RestartAlt,
                 label = "Reset preferences",
@@ -132,7 +136,7 @@ fun SettingsScreen(state: SettingsState) {
         }
 
         // ── About ──────────────────────────────────────────
-        SettingsSection(title = "About") {
+        SettingsSection(titleResId = R.string.settings_section_about) {
             AppInfoRow(
                 icon = Icons.Outlined.Info,
                 label = "Version",
@@ -161,7 +165,7 @@ fun SettingsScreen(state: SettingsState) {
         // ── App branding footer ────────────────────────────
         AppBrandingFooter()
 
-        Spacer(height(sp.xxl))
+        Spacer(Modifier.height(sp.xxl))
     }
 
     // ── Sheets ────────────────────────────────────────────
