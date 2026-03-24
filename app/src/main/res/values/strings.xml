@@ -299,6 +299,27 @@
     <string name="dialog_reset_title">Reset preferences?</string>
     <string name="dialog_reset_desc">All settings will be restored to their defaults. Your workouts, combos, plans, and progress history will not be affected.</string>
 
+    <!-- Timer -->
+    <string name="leave_session_title">Leave session?</string>
+    <string name="leave_session_desc">Your timer will keep running in the background. You can return at any time via the notification.</string>
+    <string name="action_keep_running">Keep running</string>
+    <string name="action_stop_save">Stop &amp; save</string>
+
+    <string name="stop_workout_title">Stop workout?</string>
+    <string name="stop_workout_desc">Would you like to save your progress or discard this session?</string>
+    <string name="action_save_progress">Save progress</string>
+    <string name="action_keep_going">Keep going</string>
+
+    <string name="weight_entry_desc">Log the weight used for this set.</string>
+    <string name="weight_entry_label">Weight (kg)</string>
+    <string name="weight_entry_placeholder">e.g. 80</string>
+    <string name="weight_entry_last_session">Last session: %1$s kg</string>
+    <string name="weight_entry_set_format">Set %1$d · %2$d reps</string>
+
+    <string name="action_discard">Discard</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_save">Save</string>
+
     <!-- User preferences error -->
     <string name="error_prefs_load_failed">Failed to load your preferences</string>
     <string name="error_prefs_save_failed">Failed to save your preferences</string>
