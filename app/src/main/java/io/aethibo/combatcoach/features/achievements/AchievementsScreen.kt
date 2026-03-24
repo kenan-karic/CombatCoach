@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 import io.aethibo.combatcoach.core.ui.theme.LocalSpacing
+import io.aethibo.combatcoach.features.achievements.components.AchievementsHeader
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementCard
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementDetailSheet
 import io.aethibo.combatcoachex.features.achievements.presentation.components.AchievementsHeader
