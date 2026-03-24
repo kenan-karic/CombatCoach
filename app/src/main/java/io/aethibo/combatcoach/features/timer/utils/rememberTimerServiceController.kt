@@ -13,7 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import io.aethibo.combatcoachex.features.timer.domain.service.TimerForegroundService
+import io.aethibo.combatcoach.features.timer.service.TimerForegroundService
 
 @Composable
 fun rememberTimerServiceController(

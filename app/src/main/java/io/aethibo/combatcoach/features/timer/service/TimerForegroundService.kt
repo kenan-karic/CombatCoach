@@ -1,17 +1,12 @@
-package io.aethibo.combatcoachex.features.timer.domain.service
+package io.aethibo.combatcoach.features.timer.service
 
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Binder
 import android.os.IBinder
-import io.aethibo.combatcoach.features.timer.service.ACTION_NEXT
-import io.aethibo.combatcoach.features.timer.service.ACTION_PAUSE_RESUME
-import io.aethibo.combatcoach.features.timer.service.ACTION_STOP
-import io.aethibo.combatcoach.features.timer.service.TIMER_NOTIFICATION_ID
-import io.aethibo.combatcoach.features.timer.service.TimerNotificationManager
-import io.aethibo.combatcoachex.features.timer.domain.TimerRepository
-import io.aethibo.combatcoachex.features.timer.domain.TimerSessionState
+import io.aethibo.combatcoach.shared.timer.domain.model.TimerSessionState
+import io.aethibo.combatcoach.shared.timer.domain.repository.TimerRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

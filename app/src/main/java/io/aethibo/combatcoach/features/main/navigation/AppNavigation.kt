@@ -24,6 +24,8 @@ import io.aethibo.combatcoach.features.plandetail.navigation.navigateToPlanDetai
 import io.aethibo.combatcoach.features.plandetail.navigation.planDetailsScreen
 import io.aethibo.combatcoach.features.progress.navigation.progressScreen
 import io.aethibo.combatcoach.features.settings.navigation.settingsScreen
+import io.aethibo.combatcoach.features.timer.navigation.navigateToTimer
+import io.aethibo.combatcoach.features.timer.navigation.timerScreen
 import io.aethibo.combatcoach.shared.utils.ItemType
 import io.aethibo.combatcoachex.features.editcreate.presentation.navigation.createEditScreen
 import io.aethibo.combatcoachex.features.editcreate.presentation.navigation.navigateToCreateEdit
@@ -83,9 +85,7 @@ fun AppNavigation(startDestination: Any) {
 
             dashboardScreen(
                 onNavigateToCreate = navController::navigateToCreateEdit,
-                onNavigateToTimer = { type, id ->
-                    //                    navController::navigateToTimer
-                },
+                onNavigateToTimer = navController::navigateToTimer,
                 onNavigateToPlan = navController::navigateToPlanDetails,
                 onNavigateToWorkout = { workoutId ->
                     navController.navigateToCreateEdit(ItemType.Workout, workoutId)
@@ -105,18 +105,14 @@ fun AppNavigation(startDestination: Any) {
                 onNavigateToEdit = { planId ->
                     navController.navigateToCreateEdit(ItemType.Plan, planId)
                 },
-                onNavigateToTimer = { type, id ->
-//                   navController.navigateToTimer(type, id.toInt())
-                }
+                onNavigateToTimer = navController::navigateToTimer,
             )
 
             createEditScreen(
                 onSaved = { navController.popBackStack() },
                 onDeleted = { navController.popBackStack() },
                 onBack = { navController.popBackStack() },
-                onStartTimer = { type, tid ->
-//                    navController.navigateToTimer(type, tid.toInt())
-                }
+                onStartTimer = navController::navigateToTimer,
             )
 
             progressScreen()
@@ -124,6 +120,10 @@ fun AppNavigation(startDestination: Any) {
             achievementsScreen()
 
             settingsScreen()
+
+            timerScreen(
+                onBack = { navController.popBackStack() }
+            )
         }
     }
 }

@@ -12,7 +12,6 @@ import io.aethibo.combatcoach.features.main.MainActivity
 import io.aethibo.combatcoach.shared.timer.domain.model.TimerPhase
 import io.aethibo.combatcoach.shared.timer.domain.model.TimerSessionState
 import io.aethibo.combatcoach.shared.timer.domain.model.TimerSessionType
-import io.aethibo.combatcoachex.features.timer.domain.service.TimerForegroundService
 
 const val TIMER_NOTIFICATION_ID = 1001
 private const val CHANNEL_ID = "timer_channel"
