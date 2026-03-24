@@ -61,7 +61,7 @@ fun progressPresenter(
         }
     }.collectAsState(initial = ProgressData())
 
-    val allEntries = remember(data) {
+    val allEntries = remember(data.logs, data.workouts, data.combos) {
         val workoutMap = data.workouts.associateBy { it.id }
         val comboMap = data.combos.associateBy { it.id }
 
