@@ -47,6 +47,7 @@ fun progressPresenter(
 
     var activeFilter by remember { mutableStateOf(ProgressFilter.ALL) }
     var selectedEntry by remember { mutableStateOf<LogEntryUi?>(null) }
+    var isLoading by remember { mutableStateOf(true) }
 
     val data by remember {
         combine(
@@ -55,6 +56,7 @@ fun progressPresenter(
             observeCombos(),
             observeDashboard(),
         ) { logs, workouts, combos, stats ->
+            isLoading = false
             ProgressData(logs, workouts, combos, stats)
         }
     }.collectAsState(initial = ProgressData())
@@ -129,7 +131,7 @@ fun progressPresenter(
         weekDays = weekDays,
         activeFilter = activeFilter,
         selectedEntry = selectedEntry,
-        isLoading = false,
+        isLoading = isLoading,
         eventSink = eventSink,
     )
 }
