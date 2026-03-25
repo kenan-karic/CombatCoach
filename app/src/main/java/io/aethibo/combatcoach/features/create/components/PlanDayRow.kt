@@ -37,6 +37,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.AndroidUiModes.UI_MODE_NIGHT_YES
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
@@ -219,7 +220,7 @@ fun PlanDayRow(
                         // Combos picker
                         if (availableCombos.isNotEmpty()) {
                             Text(
-                                text = stringResource(R.string.plan_day_header_workouts),
+                                text = stringResource(R.string.plan_day_header_combos),
                                 style = MaterialTheme.typography.labelMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -260,6 +261,7 @@ fun PlanDayRow(
 }
 
 @Preview(name = "Plan Day States - Light", showBackground = true)
+@Preview(name = "Plan Day States - Dark", uiMode = UI_MODE_NIGHT_YES)
 @Composable
 private fun PlanDayRowPreview() {
     CombatCoachTheme {

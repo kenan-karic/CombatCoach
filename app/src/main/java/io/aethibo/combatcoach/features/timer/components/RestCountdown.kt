@@ -34,7 +34,7 @@ import io.aethibo.combatcoach.shared.utils.toTimerDisplay
 @Composable
 fun RestCountdown(
     secondsRemaining: Int,
-//    isPaused: Boolean,
+    isPaused: Boolean,
     onSkip: () -> Unit,
     onAddTime: (Int) -> Unit,
 ) {
@@ -71,7 +71,7 @@ fun RestCountdown(
         Row(horizontalArrangement = Arrangement.spacedBy(sp.small)) {
             OutlinedButton(
                 onClick = { showAddTime = true },
-//                enabled = !isPaused,
+                enabled = !isPaused,
                 shape = RoundedCornerShape(20.dp),
                 border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
 //                border = BorderStroke(

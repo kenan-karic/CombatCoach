@@ -1,9 +1,6 @@
 package io.aethibo.combatcoach.features.timer.combat
 
 sealed interface CombatTimerEvent {
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
-    data object Start : CombatTimerEvent
-
     // ── Playback ──────────────────────────────────────────────────────────────
     data object PauseResume : CombatTimerEvent
     data object NextRound : CombatTimerEvent

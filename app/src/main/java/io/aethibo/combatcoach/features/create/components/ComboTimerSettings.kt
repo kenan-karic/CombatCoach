@@ -4,16 +4,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.components.NumberField
 import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
@@ -62,7 +61,7 @@ fun ComboTimerSettings(
         Text(
             text = stringResource(R.string.combo_timer_header_advance),
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurface,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
 
         Row(horizontalArrangement = Arrangement.spacedBy(sp.xs)) {
@@ -71,11 +70,31 @@ fun ComboTimerSettings(
                 FilterChip(
                     selected = selected,
                     onClick = { onAdvanceMode(mode) },
-                    label = { Text(mode.label(), style = MaterialTheme.typography.labelSmall) },
+                    label = {
+                        Text(
+                            text = mode.label(),
+                            style = MaterialTheme.typography.labelSmall,
+                        )
+                    },
                     colors = FilterChipDefaults.filterChipColors(
+                        // Container colors
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
                         selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
-                        selectedLabelColor = MaterialTheme.colorScheme.primary,
+
+                        // Label colors (This ensures contrast flips correctly)
+                        labelColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+
+                        // Leading icon colors if you add them
+                        iconColor = MaterialTheme.colorScheme.primary,
+                        selectedLeadingIconColor = MaterialTheme.colorScheme.onPrimaryContainer
                     ),
+                    border = FilterChipDefaults.filterChipBorder(
+                        enabled = true,
+                        selected = selected,
+                        borderColor = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f),
+                        selectedBorderColor = Color.Transparent
+                    )
                 )
             }
         }
@@ -100,7 +119,6 @@ private fun ComboTimerSettingsPreview() {
             onRounds = {},
             onRest = {},
             onAdvanceMode = {},
-            modifier = Modifier.padding(16.dp)
         )
     }
 }

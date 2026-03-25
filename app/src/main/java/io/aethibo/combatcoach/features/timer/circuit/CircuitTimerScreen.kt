@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -201,6 +202,7 @@ private fun StationIndicator(
             Box(
                 modifier = Modifier
                     .padding(horizontal = 3.dp)
+                    .size(if (active) 12.dp else 8.dp)
                     .background(
                         color = if (active) MaterialTheme.colorScheme.primary
                         else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f),
@@ -211,4 +213,3 @@ private fun StationIndicator(
         }
     }
 }
-

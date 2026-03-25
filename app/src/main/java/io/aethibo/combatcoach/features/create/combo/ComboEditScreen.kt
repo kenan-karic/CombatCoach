@@ -123,10 +123,12 @@ fun ComboEditScreen(
 
             // Strikes
             item {
-                stringResource(R.string.combo_edit_section_sequence, state.strikes.size)
+                SectionDivider(stringResource(R.string.combo_edit_section_sequence, state.strikes.size))
             }
 
-            itemsIndexed(state.strikes, key = { i, s -> "$i-$s" }) { index, strike ->
+            itemsIndexed(
+                state.strikes,
+                key = { index, strike -> "${strike}_${index}" }) { index, strike ->
                 StrikeRow(
                     strike = strike,
                     index = index,

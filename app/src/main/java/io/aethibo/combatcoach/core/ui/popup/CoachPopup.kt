@@ -1,5 +1,6 @@
 package io.aethibo.combatcoach.core.ui.popup
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -40,8 +41,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import io.aethibo.combatcoach.R
 import io.aethibo.combatcoach.core.ui.theme.Charcoal
-import io.aethibo.combatcoach.core.ui.theme.MediumGray
-import io.aethibo.combatcoach.core.ui.theme.SurfaceWhite
+import io.aethibo.combatcoach.core.ui.theme.CombatCoachTheme
 
 /**
  * Coach modular popup.
@@ -63,13 +63,11 @@ fun CoachPopup(
     popupType: PopupType,
     onDismissRequest: () -> Unit,
     modifier: Modifier = Modifier,
-    background: Color = SurfaceWhite
+    background: Color = MaterialTheme.colorScheme.surface,
 ) {
     val closeButtonAccessibility = stringResource(R.string.close_button_accessibility)
 
-    Dialog(
-        onDismissRequest = onDismissRequest
-    ) {
+    Dialog(onDismissRequest = onDismissRequest) {
         Surface(
             modifier = modifier,
             shape = PopupDefaults.DefaultPopupShape,
@@ -89,7 +87,7 @@ fun CoachPopup(
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_close),
-                        tint = MediumGray,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         contentDescription = null,
                         modifier = Modifier
                             .sizeIn(PopupDefaults.DefaultDismissIconSize)
@@ -114,8 +112,8 @@ fun CoachPopup(
                     Icon(
                         painter = painterResource(id = popupType.resId),
                         contentDescription = null,
-                        modifier = Modifier.Companion.size(PopupDefaults.MaxIconSize),
-                        tint = SurfaceWhite
+                        modifier = Modifier.size(PopupDefaults.MaxIconSize),
+                        tint = Color.White
                     )
                 }
 
@@ -142,166 +140,201 @@ fun CoachPopup(
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun GenericPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.generic_popup_title,
-            descriptionResId = R.string.generic_popup_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_ok,
-            confirmButtonAction = { },
-            cancelResId = R.string.action_cancel,
-            cancelButtonAction = { }
-        ),
-        popupType = PopupTypes.Generic,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.generic_popup_title,
+                descriptionResId = R.string.generic_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_ok,
+                confirmButtonAction = { },
+                cancelResId = R.string.action_cancel,
+                cancelButtonAction = { }
+            ),
+            popupType = PopupTypes.Generic,
+            onDismissRequest = { }
+        )
+    }
+}
+
+@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES)
+@Composable
+fun GenericPopupDarkPreview() {
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.generic_popup_title,
+                descriptionResId = R.string.generic_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_ok,
+                confirmButtonAction = { },
+                cancelResId = R.string.action_cancel,
+                cancelButtonAction = { }
+            ),
+            popupType = PopupTypes.Generic,
+            onDismissRequest = { }
+        )
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun InfoPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.info_popup_title,
-            descriptionResId = R.string.info_popup_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_got_it, // "Got it"
-            confirmButtonAction = { }
-        ),
-        popupType = PopupTypes.Info,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.info_popup_title,
+                descriptionResId = R.string.info_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_got_it, // "Got it"
+                confirmButtonAction = { }
+            ),
+            popupType = PopupTypes.Info,
+            onDismissRequest = { }
+        )
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun SuccessPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.success_popup_title,
-            descriptionResId = R.string.success_popup_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_continue,
-            confirmButtonAction = { }
-        ),
-        popupType = PopupTypes.Success,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.success_popup_title,
+                descriptionResId = R.string.success_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_continue,
+                confirmButtonAction = { }
+            ),
+            popupType = PopupTypes.Success,
+            onDismissRequest = { }
+        )
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun WarningPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.warning_popup_title,
-            descriptionResId = R.string.warning_popup_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_proceed,
-            confirmButtonAction = { },
-            cancelResId = R.string.action_cancel,
-            cancelButtonAction = { }
-        ),
-        popupType = PopupTypes.Warning,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.warning_popup_title,
+                descriptionResId = R.string.warning_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_proceed,
+                confirmButtonAction = { },
+                cancelResId = R.string.action_cancel,
+                cancelButtonAction = { }
+            ),
+            popupType = PopupTypes.Warning,
+            onDismissRequest = { }
+        )
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun ErrorPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.error_popup_title,
-            descriptionResId = R.string.error_popup_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_retry,
-            confirmButtonAction = { },
-            cancelResId = R.string.action_dismiss,
-            cancelButtonAction = { }
-        ),
-        popupType = PopupTypes.Error,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.error_popup_title,
+                descriptionResId = R.string.error_popup_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_retry,
+                confirmButtonAction = { },
+                cancelResId = R.string.action_dismiss,
+                cancelButtonAction = { }
+            ),
+            popupType = PopupTypes.Error,
+            onDismissRequest = { }
+        )
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun CustomPopupPreview() {
-    CoachPopup(
-        content = {
-            Text(
-                text = "Custom Content",
-                textAlign = TextAlign.Center,
-                color = Charcoal,
-                style = MaterialTheme.typography.headlineSmall
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = "This popup demonstrates custom content with multiple text elements and custom styling.",
-                textAlign = TextAlign.Center,
-                color = Charcoal,
-                style = MaterialTheme.typography.bodyMedium
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = Color.Gray.copy(alpha = 0.1f))
-            ) {
+    CombatCoachTheme {
+        CoachPopup(
+            content = {
                 Text(
-                    text = "Additional details can be displayed in cards or other components.",
-                    modifier = Modifier.padding(12.dp),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = Charcoal
+                    text = "Custom Content",
+                    textAlign = TextAlign.Center,
+                    color = Charcoal,
+                    style = MaterialTheme.typography.headlineSmall
                 )
-            }
-        },
-        buttons = {
-            OutlinedButton(
-                onClick = { },
-                modifier = Modifier.weight(1f)
-            ) {
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Secondary",
-                    style = MaterialTheme.typography.labelMedium
+                    text = "This popup demonstrates custom content with multiple text elements and custom styling.",
+                    textAlign = TextAlign.Center,
+                    color = Charcoal,
+                    style = MaterialTheme.typography.bodyMedium
                 )
-            }
-            Spacer(modifier = Modifier.width(12.dp))
-            Button(
-                onClick = { },
-                modifier = Modifier.weight(1f)
-            ) {
-                Text(
-                    text = "Primary",
-                    style = MaterialTheme.typography.labelMedium
-                )
-            }
-        },
-        popupType = PopupTypes.Info,
-        onDismissRequest = { }
-    )
+                Spacer(modifier = Modifier.height(16.dp))
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = Color.Gray.copy(alpha = 0.1f))
+                ) {
+                    Text(
+                        text = "Additional details can be displayed in cards or other components.",
+                        modifier = Modifier.padding(12.dp),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = Charcoal
+                    )
+                }
+            },
+            buttons = {
+                OutlinedButton(
+                    onClick = { },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(
+                        text = "Secondary",
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
+                Spacer(modifier = Modifier.width(12.dp))
+                Button(
+                    onClick = { },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    Text(
+                        text = "Primary",
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
+            },
+            popupType = PopupTypes.Info,
+            onDismissRequest = { }
+        )
+    }
 }
 
 // Single button examples
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 fun SingleButtonPopupPreview() {
-    CoachPopup(
-        content = defaultPopupContent(
-            titleResId = R.string.single_button_title,
-            descriptionResId = R.string.single_button_description
-        ),
-        buttons = defaultPopupButtons(
-            confirmResId = R.string.action_acknowledge,
-            confirmButtonAction = { }
-            // No cancel button - will use full width
-        ),
-        popupType = PopupTypes.Info,
-        onDismissRequest = { }
-    )
+    CombatCoachTheme {
+        CoachPopup(
+            content = defaultPopupContent(
+                titleResId = R.string.single_button_title,
+                descriptionResId = R.string.single_button_description
+            ),
+            buttons = defaultPopupButtons(
+                confirmResId = R.string.action_acknowledge,
+                confirmButtonAction = { }
+                // No cancel button - will use full width
+            ),
+            popupType = PopupTypes.Info,
+            onDismissRequest = { }
+        )
+    }
 }

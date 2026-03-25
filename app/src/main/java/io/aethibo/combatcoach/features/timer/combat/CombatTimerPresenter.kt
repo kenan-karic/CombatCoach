@@ -105,15 +105,20 @@ fun combatTimerPresenter(
             showStopDialog = true
         },
         onNextRequested = {
+            restTimer.cancel()
             val c = combo ?: return@rememberTimerServiceController
-            restTimer.cancel(); workTimer.cancel()
-            if (currentRound >= c.rounds) {
-                phase = TimerPhase.COMPLETE; showComplete = true
+            val nextRound = currentRound + 1
+            if (nextRound > c.rounds) {
+                // Last round just ended — go to COMPLETE
+                phase = TimerPhase.COMPLETE
+                showComplete = true
+                soundCoordinator.onRoundStart(prefs)
             } else {
-                currentRound++
+                currentRound = nextRound
                 phase = TimerPhase.WORK
                 secondsLeft = c.durationSeconds
                 workTimer.start(scope, c.durationSeconds)
+                soundCoordinator.onRoundStart(prefs)
             }
         },
     )
@@ -230,13 +235,6 @@ fun combatTimerPresenter(
     val eventSink: (CombatTimerEvent) -> Unit = remember {
         { event ->
             when (event) {
-                CombatTimerEvent.Start -> {
-                    val c = combo ?: return@remember
-                    phase = TimerPhase.WORK
-                    secondsLeft = c.durationSeconds
-                    workTimer.start(scope, c.durationSeconds)
-                }
-
                 CombatTimerEvent.PauseResume -> {
                     isPaused = !isPaused
                     if (isPaused) {
@@ -253,11 +251,19 @@ fun combatTimerPresenter(
                 CombatTimerEvent.SkipRest -> {
                     restTimer.cancel()
                     val c = combo ?: return@remember
-                    currentRound++
-                    phase = TimerPhase.WORK
-                    secondsLeft = c.durationSeconds
-                    workTimer.start(scope, c.durationSeconds)
-                    soundCoordinator.onRoundStart(prefs)
+                    val nextRound = currentRound + 1
+                    if (nextRound > c.rounds) {
+                        // Last round just ended — go to COMPLETE
+                        phase = TimerPhase.COMPLETE
+                        showComplete = true
+                        soundCoordinator.onRoundStart(prefs)
+                    } else {
+                        currentRound = nextRound
+                        phase = TimerPhase.WORK
+                        secondsLeft = c.durationSeconds
+                        workTimer.start(scope, c.durationSeconds)
+                        soundCoordinator.onRoundStart(prefs)
+                    }
                 }
 
                 is CombatTimerEvent.AddTime -> {

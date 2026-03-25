@@ -108,10 +108,12 @@ fun PlanEditScreen(
 
             if (state.planType == PlanType.PROGRAM) {
                 item {
-                    stringResource(R.string.plan_edit_section_days, state.days.size)
+                    SectionDivider(stringResource(R.string.plan_edit_section_days, state.days.size))
                 }
 
-                itemsIndexed(state.days, key = { _, d -> d.dayNumber }) { index, day ->
+                itemsIndexed(
+                    state.days,
+                    key = { index, day -> "${day.dayNumber}_${index}" }) { index, day ->
                     PlanDayRow(
                         day = day,
                         index = index,

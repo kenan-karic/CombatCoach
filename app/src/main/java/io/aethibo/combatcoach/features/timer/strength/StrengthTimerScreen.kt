@@ -129,7 +129,7 @@ fun StrengthTimerScreen(
             ) {
                 RestCountdown(
                     secondsRemaining = state.restSecondsRemaining,
-//                    isPaused = state.isPaused,
+                    isPaused = state.isPaused,
                     onSkip = { state.eventSink(StrengthTimerEvent.SkipRest) },
                     onAddTime = { state.eventSink(StrengthTimerEvent.AddRestTime(it)) },
                 )

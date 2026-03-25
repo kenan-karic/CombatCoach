@@ -255,6 +255,7 @@ fun strengthTimerPresenter(
             when (event) {
                 StrengthTimerEvent.SetComplete -> {
                     val ex = workout?.exercises?.getOrNull(exerciseIndex)
+                    val completedSetIdx = setIndex
                     recordSet(weightKg = null)
                     advanceToNextSet()
 
@@ -268,7 +269,7 @@ fun strengthTimerPresenter(
                         pendingWeightEntry = PendingWeightEntry(
                             exerciseId = ex.id,
                             exerciseName = ex.name,
-                            setIndex = setIndex,
+                            setIndex = completedSetIdx,
                             repsCompleted = ex.reps,
                             previousWeightKg = prefill,
                         )
@@ -370,6 +371,7 @@ fun strengthTimerPresenter(
         restSecondsRemaining = restRemaining,
         totalSecondsElapsed = totalElapsed,
         isLoading = isLoading,
+        isPaused = isPaused,
         showComplete = showComplete,
         showStopDialog = showStopDialog,
         showLeaveDialog = showLeaveDialog,

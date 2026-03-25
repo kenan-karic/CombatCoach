@@ -167,7 +167,9 @@ fun WorkoutEditScreen(
                 )
             }
 
-            itemsIndexed(state.exercises, key = { _, ex -> ex.id }) { index, exercise ->
+            itemsIndexed(
+                state.exercises,
+                key = { index, ex -> "${ex.id}_${index}" }) { index, exercise ->
                 ExerciseRow(
                     exercise = exercise,
                     index = index,
@@ -175,7 +177,6 @@ fun WorkoutEditScreen(
                     workoutType = state.workoutType,
                     onUpdate = { state.eventSink(WorkoutEditEvent.UpdateExercise(it)) },
                     onRemove = { state.eventSink(WorkoutEditEvent.RemoveExercise(exercise.id)) },
-                    // Reorder: swap with neighbour — no library needed.
                     onMoveUp = {
                         state.eventSink(
                             WorkoutEditEvent.ReorderExercises(

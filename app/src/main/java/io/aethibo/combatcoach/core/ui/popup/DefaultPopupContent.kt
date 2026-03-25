@@ -19,9 +19,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import io.aethibo.combatcoach.core.ui.theme.Charcoal
 import io.aethibo.combatcoach.core.ui.theme.CoralPink
-import io.aethibo.combatcoach.core.ui.theme.SurfaceWhite
 
 @Composable
 fun defaultPopupContent(
@@ -35,7 +33,7 @@ fun defaultPopupContent(
     Text(
         text = stringResource(id = titleResId),
         textAlign = TextAlign.Center,
-        color = Charcoal,
+        color = MaterialTheme.colorScheme.onSurface,
         style = MaterialTheme.typography.bodyLarge,
         modifier = Modifier.semantics {
             contentDescription = titleAccessibility
@@ -45,7 +43,7 @@ fun defaultPopupContent(
     Text(
         text = description,
         textAlign = TextAlign.Center,
-        color = Charcoal,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
         style = MaterialTheme.typography.labelSmall,
         modifier = Modifier.semantics {
             contentDescription = descriptionAccessibility
@@ -78,8 +76,8 @@ fun defaultPopupButtons(
         modifier = cancelResId?.let { Modifier }
             ?: Modifier.fillMaxWidth(PopupDefaults.ButtonToBodyRatio),
         colors = ButtonDefaults.buttonColors().copy(
-            containerColor = Charcoal,
-            contentColor = SurfaceWhite,
+            containerColor = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
         )
     ) {
         Text(

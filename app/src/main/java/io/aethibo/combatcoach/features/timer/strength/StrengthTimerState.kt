@@ -14,6 +14,7 @@ data class StrengthTimerState(
     val restSecondsRemaining: Int = 0,
     val totalSecondsElapsed: Int = 0,
     val isLoading: Boolean = true,
+    val isPaused: Boolean = false,
     val showComplete: Boolean = false,
     val showStopDialog: Boolean = false,
     val showLeaveDialog: Boolean = false,
