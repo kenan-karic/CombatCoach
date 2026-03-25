@@ -24,20 +24,29 @@ import io.aethibo.combatcoach.shared.achievement.domain.model.AchievementCategor
 import io.aethibo.combatcoach.shared.achievement.domain.utils.AchievementKeys
 
 @Composable
-internal fun LockedBadge(achievement: Achievement, modifier: Modifier = Modifier) {
+internal fun LockedBadge(
+    achievement: Achievement,
+    modifier: Modifier = Modifier
+) {
     Box(
-        modifier = modifier
-            .size(64.dp)
-            .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)),
+        modifier = modifier.size(64.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Icon(
-            imageVector = achievement.iconVector(),
-            contentDescription = achievement.title,
-            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
-            modifier = Modifier.size(28.dp),
-        )
+        Box(
+            modifier = Modifier
+                .size(52.dp)
+                .clip(CircleShape)
+                .background(MaterialTheme.colorScheme.outline.copy(alpha = 0.15f)),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(
+                imageVector = achievement.iconVector(),
+                contentDescription = achievement.title,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
+                modifier = Modifier.size(28.dp),
+            )
+        }
+
         Box(
             modifier = Modifier
                 .size(18.dp)

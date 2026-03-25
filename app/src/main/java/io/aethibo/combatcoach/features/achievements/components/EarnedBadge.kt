@@ -35,6 +35,7 @@ import io.aethibo.combatcoach.shared.achievement.domain.utils.AchievementKeys
 internal fun EarnedBadge(
     achievement: Achievement,
     color: Color,
+    modifier: Modifier = Modifier,
 ) {
     val infiniteTransition = rememberInfiniteTransition(label = "badgeGlow")
     val glowAlpha by infiniteTransition.animateFloat(
@@ -48,7 +49,7 @@ internal fun EarnedBadge(
     )
 
     Box(
-        modifier = Modifier.size(64.dp),
+        modifier = modifier.size(64.dp),
         contentAlignment = Alignment.Center,
     ) {
         Box(
@@ -57,6 +58,7 @@ internal fun EarnedBadge(
                 .clip(CircleShape)
                 .background(color.copy(alpha = glowAlpha * 0.3f))
         )
+
         Box(
             modifier = Modifier
                 .size(52.dp)
@@ -75,16 +77,21 @@ internal fun EarnedBadge(
                 modifier = Modifier.size(28.dp),
             )
         }
-        Box(
-            modifier = Modifier
-                .size(18.dp)
-                .align(Alignment.BottomEnd)
-                .clip(CircleShape)
-                .background(color),
-            contentAlignment = Alignment.Center,
-        ) {
-            Icon(Icons.Filled.Check, null, tint = Color.White, modifier = Modifier.size(11.dp))
-        }
+
+        BadgeCheckmark(color = color, modifier = Modifier.align(Alignment.BottomEnd))
+    }
+}
+
+@Composable
+private fun BadgeCheckmark(color: Color, modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .size(18.dp)
+            .clip(CircleShape)
+            .background(color),
+        contentAlignment = Alignment.Center,
+    ) {
+        Icon(Icons.Filled.Check, null, tint = Color.White, modifier = Modifier.size(11.dp))
     }
 }
 
