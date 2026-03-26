@@ -1,3 +1,377 @@
 <resources>
     <string name="app_name">Combat Coach</string>
+
+    <!-- Utilities -->
+    <string name="skip">Skip</string>
+
+    <!-- Onboarding - Welcome -->
+    <string name="onboarding_welcome_title">Welcome to\nCombat Coach</string>
+    <string name="onboarding_welcome_subtitle">Your offline training partner</string>
+    <string name="onboarding_welcome_description">
+        Build workouts, drill combos, follow training plans — all stored locally on your device. No account needed, no internet required.
+    </string>
+
+    <!-- Onboarding - Workouts -->
+    <string name="onboarding_workouts_title">Build Your\nWorkouts</string>
+    <string name="onboarding_workouts_subtitle">Strength &amp; combat in one place</string>
+    <string name="onboarding_workouts_description">
+        Create strength workouts with sets and reps, or build martial arts combos with timed rounds. Mix disciplines — striking, grappling, MMA, or general fitness.
+    </string>
+
+    <!-- Onboarding - Timer -->
+    <string name="onboarding_timer_title">Follow the\nTimer</string>
+    <string name="onboarding_timer_subtitle">Eyes on the drill, not the clock</string>
+    <string name="onboarding_timer_description">
+        The timer shows your combo or exercise name in full view. Auto-advance between rounds, or tap Done when you\'re ready. Pause, add time, or skip any round.
+    </string>
+
+    <!-- Onboarding - Progress -->
+    <string name="onboarding_progress_title">Track Your\nProgress</string>
+    <string name="onboarding_progress_subtitle">Every session logged automatically</string>
+    <string name="onboarding_progress_description">
+        After each session your stats are saved. Return to any workout and see your previous performance side-by-side. Follow training plans and track your progress day by day.
+    </string>
+
+    <!-- Onboarding - Achievements -->
+    <string name="onboarding_achievements_title">Earn\nAchievements</string>
+    <string name="onboarding_achievements_subtitle">Gamify your training journey</string>
+    <string name="onboarding_achievements_description">
+        Unlock achievements as you train — first workout, consistency streaks, volume milestones, and more. Every session counts toward your next reward.
+    </string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting_morning">Good morning</string>
+    <string name="dashboard_greeting_afternoon">Good afternoon</string>
+    <string name="dashboard_greeting_evening">Good evening</string>
+    <string name="dashboard_empty_title">Nothing here yet</string>
+    <string name="dashboard_empty_description">Create your first workout or combo to get started.</string>
+    <string name="dashboard_create_workout">Workout</string>
+    <string name="dashboard_create_combo">Combo</string>
+    <string name="dashboard_quick_create_workout">Workout</string>
+    <string name="dashboard_quick_create_combo">Combo</string>
+    <string name="dashboard_quick_create_plan">Plan</string>
+    <string name="dashboard_stats_total">Total</string>
+    <string name="dashboard_stats_this_week">This week</string>
+    <string name="dashboard_stats_streak">Streak</string>
+    <string name="dashboard_stats_minutes">Minutes</string>
+    <string name="plan_progress_fraction_format">%1$d/%2$d</string>
+    <string name="plan_percent_complete_format">%1$d%% complete</string>
+    <string name="workout_exercise_count">%1$d exercises</string>
+    <string name="workout_duration_minutes_format"> · %1$dm</string>
+    <string name="cd_start_workout">Start %1$s</string>
+    <string name="combo_no_strikes">No strikes defined</string>
+    <string name="combo_stats_format">%1$dR · %2$ds</string>
+    <string name="cd_start_combo">Start %1$s</string>
+    <string name="stats_streak_days_format">%1$dd</string>
+
+    <!-- Plan -->
+    <string name="plan_banner_active_label">ACTIVE PLAN</string>
+    <string name="plan_banner_day_label">Day</string>
+    <string name="plan_banner_progress_format">%1$d/%2$d</string>
+    <string name="plan_banner_percent_format">%1$d%% complete</string>
+    <string name="plan_banner_open_cta">Tap to open →</string>
+    <string name="plans_empty_title">No plans yet</string>
+    <string name="plans_empty_description">Create a training program to track your progress over multiple days and stay consistent.</string>
+    <string name="plans_empty_button">Create a Plan</string>
+
+    <!-- Plan detail -->
+    <string name="plan_detail_rest_day_label">Rest Day — No session needed</string>
+    <string name="plan_detail_start_session">Start Today\'s Session</string>
+    <string name="plan_detail_advance_next_day">Advance to Next Day</string>
+    <string name="plan_detail_mark_done_advance">Mark Day Done &amp; Advance</string>
+    <string name="plan_detail_stop_plan">Stop following this plan</string>
+    <string name="plan_detail_follow_plan">Follow This Plan</string>
+    <string name="plan_detail_preview_day_one">Preview Day 1</string>
+    <string name="plan_detail_header_active_badge">Active</string>
+    <string name="plan_detail_header_stat_days">Days</string>
+    <string name="plan_detail_header_stat_weeks">Weeks</string>
+    <string name="plan_detail_header_stat_rest_days">Rest days</string>
+    <string name="plan_detail_progress_title">Your progress</string>
+    <string name="plan_detail_progress_next_label">Up next: %1$s</string>
+    <string name="plan_detail_progress_fraction_format">%1$d / %2$d</string>
+    <string name="plan_detail_progress_percent_format">%1$d%% complete</string>
+    <string name="plan_detail_week_current_label">Current</string>
+    <string name="plan_detail_week_days_complete_format">%1$d/%2$d days complete</string>
+    <string name="cd_expand_week">Expand week details</string>
+    <string name="cd_collapse_week">Collapse week details</string>
+    <string name="start_session_title">Choose a session to start:</string>
+    <string name="start_session_empty">No sessions assigned to this day.</string>
+    <string name="start_session_action">Start</string>
+    <string name="session_workout_detail_format">%1$d exercises · ~%2$dm</string>
+    <string name="session_combo_detail_format">%1$d rounds · %2$ds</string>
+
+    <!-- Create/Edit -->
+    <string name="cd_saving_progress">Saving in progress</string>
+    <string name="create_label_name">Name</string>
+    <string name="create_label_description">Description (optional)</string>
+    <string name="error_name_required">Name cannot be empty</string>
+    <string name="delete_popup_title">Delete \"%1$s\"?</string>
+    <string name="delete_popup_description">This action cannot be undone. All associated data will be removed.</string>
+    <string name="discard_popup_title">Discard changes?</string>
+    <string name="discard_popup_description">You have unsaved changes. If you go back now they will be lost.</string>
+    <string name="discard_action_discard">Discard</string>
+    <string name="discard_action_keep">Keep editing</string>
+    <string name="workout_edit_title_create">New Workout</string>
+    <string name="workout_edit_title_edit">Edit Workout</string>
+    <string name="workout_edit_action_start">Start</string>
+
+    <string name="workout_edit_section_discipline">Discipline</string>
+    <string name="workout_edit_section_type">Type</string>
+    <string name="workout_edit_section_circuit_settings">Circuit Settings</string>
+
+    <string name="workout_edit_section_stations">Stations (%1$d)</string>
+    <string name="workout_edit_section_exercises">Exercises (%1$d)</string>
+
+    <string name="workout_edit_label_rounds">Rounds</string>
+    <string name="workout_edit_label_rest_rounds">Rest between rounds (s)</string>
+
+    <string name="workout_edit_action_add_station">Add Station</string>
+    <string name="workout_edit_action_add_exercise">Add Exercise</string>
+
+    <string name="exercise_row_unnamed">Unnamed exercise</string>
+    <string name="exercise_row_label_name">Exercise name</string>
+    <string name="exercise_row_label_notes">Notes (optional)</string>
+
+    <string name="exercise_summary_sets">%1$d sets</string>
+    <string name="exercise_summary_reps">%1$d reps</string>
+    <string name="exercise_summary_seconds">%1$ds</string>
+    <string name="exercise_summary_rest">%1$ds rest</string>
+    <string name="exercise_summary_separator"> · </string>
+
+    <string name="exercise_field_sets">Sets</string>
+    <string name="exercise_field_reps">Reps</string>
+    <string name="exercise_field_seconds">Seconds</string>
+    <string name="exercise_field_rest">Rest (s)</string>
+
+    <string name="cd_move_up">Move exercise up</string>
+    <string name="cd_move_down">Move exercise down</string>
+    <string name="cd_remove_exercise">Remove exercise</string>
+    <string name="cd_expand_exercise">Expand exercise details</string>
+    <string name="cd_collapse_exercise">Collapse exercise details</string>
+
+    <string name="combo_edit_title_create">New Combo</string>
+    <string name="combo_edit_title_edit">Edit Combo</string>
+    <string name="combo_edit_action_drill">Drill</string>
+
+    <string name="combo_edit_section_discipline">Discipline</string>
+    <string name="combo_edit_section_timer_settings">Timer Settings</string>
+    <string name="combo_edit_section_sequence">Strike Sequence (%1$d)</string>
+
+    <string name="combo_edit_action_add_strike">Add Strike</string>
+
+    <string name="combo_timer_label_duration">Duration (s)</string>
+    <string name="combo_timer_label_rounds">Rounds</string>
+    <string name="combo_timer_label_rest">Rest (s)</string>
+    <string name="combo_timer_header_advance">Advance Mode</string>
+
+    <string name="advance_mode_manual">Manual</string>
+    <string name="advance_mode_automatic">Automatic</string>
+
+    <string name="cd_remove_strike">Remove strike from sequence</string>
+
+    <string name="strike_popup_title">Add Strike</string>
+    <string name="strike_popup_label">Strike name</string>
+    <string name="strike_popup_quick_add">Quick add:</string>
+
+    <string name="plan_type_program_subtitle">Ordered days</string>
+    <string name="plan_type_routine_subtitle">Shuffle pool</string>
+
+    <string name="plan_day_rest_label">Rest day</string>
+    <string name="plan_day_summary_format">%1$dW · %2$dC</string>
+    <string name="plan_day_field_label">Day label</string>
+    <string name="plan_day_header_workouts">Workouts</string>
+    <string name="plan_day_header_combos">Combos</string>
+    <string name="cd_remove_day">Remove day</string>
+
+    <string name="cd_select_workout">Select %1$s</string>
+    <string name="cd_deselect_workout">Deselect %1$s</string>
+
+    <string name="plan_edit_title_create">New Plan</string>
+    <string name="plan_edit_title_edit">Edit Plan</string>
+
+    <string name="plan_edit_section_discipline">Discipline</string>
+    <string name="plan_edit_section_type">Plan Type</string>
+    <string name="plan_edit_section_days">Days (%1$d)</string>
+    <string name="plan_edit_section_collection">Workouts in Collection</string>
+
+    <string name="plan_edit_action_add_day">Add Day</string>
+
+    <!-- Progress -->
+    <string name="progress_title">Progress</string>
+    <string name="this_week_title">This week</string>
+
+    <string name="label_total_sessions">Total\nsessions</string>
+    <string name="label_current_streak">Current\nstreak</string>
+    <string name="label_total_minutes">Total\nminutes</string>
+
+    <string name="streak_days_suffix">%1$d days</string>
+
+    <string name="history_label_duration">Duration</string>
+    <string name="history_label_sets">Sets</string>
+    <string name="history_label_reps">Reps</string>
+    <string name="history_header_breakdown">Exercise breakdown</string>
+    <string name="history_header_notes">Notes</string>
+
+    <string name="cd_delete_log">Delete log</string>
+
+    <string name="history_delete_title">Delete workout log?</string>
+    <string name="history_delete_message">This action cannot be undone. This session will be removed from your progress history.</string>
+
+    <string name="comparison_faster">Faster than last time</string>
+    <string name="comparison_neutral">Compared to last time</string>
+    <string name="comparison_details">Previous: %1$s  ·  Difference: %2$s%3$s</string>
+
+    <string name="exercise_sets_count">%1$d sets</string>
+    <string name="exercise_reps_suffix">%1$dr</string>
+    <string name="exercise_weight_suffix">%1$.1fkg</string>
+
+    <string name="empty_progress_all">No sessions logged yet</string>
+    <string name="empty_progress_workouts">No strength workouts yet</string>
+    <string name="empty_progress_combos">No combat sessions yet</string>
+    <string name="empty_progress_week">No sessions this week</string>
+    <string name="empty_progress_month">No sessions this month</string>
+
+    <string name="empty_progress_description">Complete a workout or combo to see your history here.</string>
+
+    <!-- Achievements -->
+    <string name="achievements_title">Achievements</string>
+    <string name="achievements_earned_label">achievements earned</string>
+    <string name="achievements_count_divider"> / %1$d</string>
+    <string name="achievements_percent_complete">%1$d%% complete</string>
+    <string name="achievement_category_all">All</string>
+    <string name="achievement_category_strength">Strength</string>
+    <string name="achievement_category_combat">Combat</string>
+    <string name="achievement_category_milestones">Milestones</string>
+    <string name="achievement_category_social">Social</string>
+
+    <string name="achievement_earned_on">Earned on %1$s</string>
+    <string name="achievement_detail_progress_format">%1$d / %2$d  ·  %3$d%%</string>
+    <string name="achievement_unlocked_title">🏆  Achievement Unlocked!</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_saving_indicator">Saving</string>
+    <string name="settings_auto_save_hint">Preferences are saved automatically.</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_section_training">Training</string>
+    <string name="settings_section_units">Units</string>
+    <string name="settings_section_audio_haptic">Audio &amp; Haptic</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_section_data">Data</string>
+    <string name="settings_section_about">About</string>
+    <string name="app_tagline">Train offline. Track everything.</string>
+    <string name="settings_haptic_label">Haptic Feedback</string>
+    <string name="settings_haptic_sub">Vibrate on strike detection</string>
+    <string name="settings_weight_label">Weight Unit</string>
+    <string name="settings_weight_kg">Kilograms (kg)</string>
+    <string name="settings_action_change_password">Change Password</string>
+    <string name="settings_action_export_data">Export Workout Data</string>
+    <string name="settings_action_export_sub">Download your history as a CSV file</string>
+    <string name="settings_action_sign_out">Sign Out</string>
+    <string name="settings_action_delete_account">Delete Account</string>
+    <string name="settings_info_version">Version</string>
+    <string name="settings_info_build">Build Number</string>
+    <string name="settings_info_db_status">Database Status</string>
+    <string name="settings_info_online">Synced</string>
+    <string name="settings_info_offline">Local Only</string>
+    <string name="settings_label_theme">Theme</string>
+    <string name="settings_label_discipline">Default discipline</string>
+    <string name="settings_label_weight_unit">Weight unit</string>
+    <string name="settings_label_sound">Sound effects</string>
+    <string name="settings_label_vibration">Haptic feedback</string>
+    <string name="settings_label_countdown">Countdown beeps</string>
+    <string name="settings_label_reset">Reset preferences</string>
+    <string name="settings_label_version">Version</string>
+    <string name="settings_label_storage">Data storage</string>
+    <string name="settings_label_network">Network</string>
+    <string name="settings_label_account">Account required</string>
+
+    <string name="settings_sub_sound">Timer beeps and completion chimes</string>
+    <string name="settings_sub_vibration">Vibration on set complete and round change</string>
+    <string name="settings_sub_countdown">Beep at 3–2–1 before round ends</string>
+    <string name="settings_sub_reset">Restore all settings to defaults</string>
+
+    <string name="settings_value_local_only">Local only</string>
+    <string name="settings_value_offline_only">Offline only</string>
+    <string name="settings_value_none">None</string>
+
+    <string name="dialog_reset_title">Reset preferences?</string>
+    <string name="dialog_reset_desc">All settings will be restored to their defaults. Your workouts, combos, plans, and progress history will not be affected.</string>
+
+    <!-- Timer -->
+    <string name="leave_session_title">Leave session?</string>
+    <string name="leave_session_desc">Your timer will keep running in the background. You can return at any time via the notification.</string>
+    <string name="action_keep_running">Keep running</string>
+    <string name="action_stop_save">Stop &amp; save</string>
+
+    <string name="stop_workout_title">Stop workout?</string>
+    <string name="stop_workout_desc">Would you like to save your progress or discard this session?</string>
+    <string name="action_save_progress">Save progress</string>
+    <string name="action_keep_going">Keep going</string>
+
+    <string name="weight_entry_desc">Log the weight used for this set.</string>
+    <string name="weight_entry_label">Weight (kg)</string>
+    <string name="weight_entry_placeholder">e.g. 80</string>
+    <string name="weight_entry_last_session">Last session: %1$s kg</string>
+    <string name="weight_entry_set_format">Set %1$d · %2$d reps</string>
+
+    <!-- Timer notification -->
+    <string name="notification_popup_title">Timer notifications</string>
+    <string name="notification_popup_desc">Allow notifications so your workout timer keeps running when the screen is off or you switch apps.</string>
+    <string name="action_allow">Allow</string>
+    <string name="action_not_now">Not now</string>
+
+    <!-- User preferences error -->
+    <string name="error_prefs_load_failed">Failed to load your preferences</string>
+    <string name="error_prefs_save_failed">Failed to save your preferences</string>
+    <string name="error_prefs_corrupted">A preference was corrupted and reset (%s)</string>
+    <string name="error_unknown">Something went wrong</string>
+
+    <!-- Generic Popup -->
+    <string name="generic_popup_title">Information</string>
+    <string name="generic_popup_description">This is a generic popup message.</string>
+
+    <!-- Info Popup -->
+    <string name="info_popup_title">Additional Information</string>
+    <string name="info_popup_description">Here\'s some helpful information you should know.</string>
+
+    <!-- Success Popup -->
+    <string name="success_popup_title">Success!</string>
+    <string name="success_popup_description">Your action was completed successfully.</string>
+
+    <!-- Warning Popup -->
+    <string name="warning_popup_title">Warning</string>
+    <string name="warning_popup_description">Please review this action before proceeding.</string>
+
+    <!-- Error Popup -->
+    <string name="error_popup_title">Error</string>
+    <string name="error_popup_description">Something went wrong. Please try again.</string>
+
+    <!-- Single Button Popup -->
+    <string name="single_button_title">Notification</string>
+    <string name="single_button_description">This is a simple notification popup.</string>
+
+    <!-- Button Labels -->
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_got_it">Got it</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_proceed">Proceed</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_acknowledge">Acknowledge</string>
+    <string name="action_save">Save</string>
+    <string name="action_add">Add</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_skip">Skip</string>
+
+    <!-- Test values -->
+    <string name="test_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+
+    <!-- Accessibility -->
+    <string name="close_button_accessibility">Close. Button.</string>
+
 </resources>
